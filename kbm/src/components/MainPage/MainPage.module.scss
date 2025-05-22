@@ -171,14 +171,6 @@ $text: #3a1f0b;
   animation: spin 5s linear infinite; /* 5초에 한 바퀴, 선형, 무한 반복 */
 }
 
-.dot {
-  width: 0.75rem;
-  height: 0.75rem;
-  background-color: darken($accent, 10%);
-  border-radius: 50%;
-  margin: 2rem 0;
-}
-
 .tagline {
   position: relative;
   top: 21rem;  

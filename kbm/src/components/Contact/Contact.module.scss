@@ -1,0 +1,104 @@
+
+/* src/components/ContactSection/ContactSection.module.scss */
+$bg: #fdeee1;
+$accent: #ff4500;
+$text: #333;
+
+.contactSection {
+  background: $bg;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.preHeading {
+  font-size: 1.5rem;
+  color: $accent;
+  margin-bottom: 1rem;
+}
+
+.mainHeading {
+  font-family: 'PP Editorial Old', serif;
+  font-size: 12vw;
+  color: #fff;
+  background: $accent;
+  display: inline-block;
+  padding: 1rem 2rem;
+  border-radius: 12px;
+  margin-bottom: 2rem;
+}
+
+.contentGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.ctaBox {
+  font-family: 'Jura', serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ctaButton {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  border: 2px solid $accent;
+  border-radius: 9999px;
+  color: $accent;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background 0.3s, color 0.3s;
+  &:hover {
+    background: $accent;
+    color: #fff;
+  }
+}
+
+.sectionTitle {
+  font-family: 'Jura', serif;
+  font-size: 1rem;
+  color: $accent;
+  margin-bottom: 1rem;
+}
+
+.contactMethods{
+  text-align: right;
+}
+
+
+.contactMethods ul,
+.otherLinks ul {
+  font-family: 'Jura', serif;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.contactMethods li,
+.otherLinks li {
+  margin-bottom: 0.5rem;
+}
+.contactMethods a,
+.otherLinks a {
+  color: $accent;
+  text-decoration: none;
+  font-size: 1.125rem;
+  transition: opacity 0.2s;
+}
+
+.contactMethods a:hover,
+.otherLinks a:hover {
+  opacity: 0.7;
+}
+
+.footer {
+  font-family: 'Jura', serif;
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.875rem;
+  color: $accent;
+  border-top: 1px solid rgba($accent, 0.2);
+  padding-top: 1rem;
+}

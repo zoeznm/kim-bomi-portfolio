@@ -101,3 +101,12 @@ $bgHover: rgba($accent, 0.05);
 .portfolioSection {
   scroll-margin-top: 80px; /* 헤더 높이를 정확히 기입 */
 }
+.star {
+  display: inline-block;           /* transform 적용을 위해 inline 요소를 블록화 */
+  transform-origin: center center; /* 회전 중심을 요소 중앙으로 */
+  animation: spin 5s linear infinite; /* 5초에 한 바퀴, 선형, 무한 반복 */
+}
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}

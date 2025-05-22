@@ -6,6 +6,7 @@ import { useState } from "react";
 import styles from "./MainPage.module.scss";
 import About from "../About/About";
 import Portfolio from "../Portfolio/Portfolio";
+import Contact from "../Contact/Contact"
 
 export default function MainPage() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -36,8 +37,8 @@ export default function MainPage() {
         </div>
 
         <div className={styles.navRight}>
-          <a href="#fun" className={styles.funVersion}>
-            {"{ KOREAN }"}
+          <a href="#old" className={styles.funVersion}>
+            {"{ OLD VERSION }"}
           </a>
         </div>
       </header>
@@ -109,6 +110,7 @@ export default function MainPage() {
 
       <About />
       <Portfolio />
+      <Contact />
     </div>
   );
 }

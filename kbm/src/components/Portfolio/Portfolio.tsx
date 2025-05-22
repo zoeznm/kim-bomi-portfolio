@@ -18,9 +18,11 @@ const teamProjects: Project[] = [
 
 // 개인 작업 목록
 const personalProjects: Project[] = [
-  { year: 2025, title: "My Portfolio", tags: ["Design", "Development"] },
-  { year: 2024, title: "Landing Page", tags: ["UI/UX", "Animation"] },
-  { year: 2023, title: "Blog Theme", tags: ["CSS", "Responsive"] },
+  { year: 2024, title: "My Portfolio", tags: ["Design", "Development"] },
+  { year: 2024, title: "My Portfolio", tags: ["Design", "Development"] },
+  { year: 2025, title: "Landing Page", tags: ["UI/UX", "Animation"] },
+  { year: 2025, title: "Blog Theme", tags: ["CSS", "Responsive"] },
+  { year: 2025, title: "Blog Theme", tags: ["CSS", "Responsive"] },
 ];
 
 export default function Portfolio() {
