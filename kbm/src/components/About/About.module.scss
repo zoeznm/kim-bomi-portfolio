@@ -1,0 +1,89 @@
+.about {
+  padding: 6rem 2rem;
+  max-width: 100vw;
+  height: 100vh;
+  margin: 0 auto;
+  text-align: center;
+  opacity: 0; /* GSAP 애니메이션 초기값 */
+
+  .inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    gap: 4rem;
+  }
+
+  .photoBox {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+      width: 250px;
+      height: 250px;
+      object-fit: cover;
+      border-radius: 12px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    }
+  }
+
+  .content {
+    flex: 1;
+    max-width: 480px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .tagline {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+    color: #333;
+  }
+
+  .tabs {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+
+    button {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      border: 2px solid #88CE02;
+      background: transparent;
+      color: #88CE02;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.3s, color 0.3s;
+
+      &.active {
+        background: #88CE02;
+        color: #fff;
+      }
+    }
+  }
+
+  .tabContent {
+    width: 100%;
+    .panel {
+      h3 {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+        color: #222;
+      }
+      p, ul {
+        font-size: 1rem;
+        color: #555;
+        line-height: 1.6;
+      }
+      ul {
+        list-style: disc inside;
+        margin: 0;
+        padding: 0;
+      }
+    }
+  }
+}

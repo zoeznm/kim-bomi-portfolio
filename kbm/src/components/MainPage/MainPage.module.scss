@@ -1,0 +1,232 @@
+// Variables
+@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Jura:wght@300..700&display=swap');
+
+$bg: #fdeee1;
+$accent: #ff4500;
+$text: #3a1f0b;
+
+
+.container {
+  background-color: $bg;
+  color: $accent;
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+  width: 100vw;
+}
+
+// --- Header ---
+.header {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 10;
+}
+
+.navLeft, .navRight {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 0.875rem;
+  letter-spacing: 0.05em;
+  font-family: "Jura", sans-serif;
+  font-weight: 600;
+}
+
+.separator {
+  display: inline-block;
+  width: 1rem;
+  text-align: center;
+}
+
+.navCenter {
+  position: absolute;       /* 절대 위치 지정 */
+  left: 50%;                /* 부모 너비의 50% 지점 */
+  transform: translateX(-50%);
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.menuBtn {
+  background: none;
+  border: none;
+  padding: 0.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  cursor: pointer;
+
+  span {
+    display: block;
+    width: 1.5rem;
+    height: 2px;
+    background-color: $accent;
+    font-family: "Jura", sans-serif;
+    font-weight: 600;
+  }
+}
+.overlay {
+  position: fixed;
+  inset: 0;                     // top/right/bottom/left: 0
+  background-color: $accent;   // 강렬한 빨간
+  color: #fff;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  .closeBtn {
+    position: absolute;
+    top: 18%;                /* 최상단 */
+    left: 50%;           /* 부모 너비의 50% 지점 */
+    transform: translateX(-50%); /* 진짜 가운데로 */
+    padding: 1.5rem;         /* 클릭 영역 확보 */
+    font-size: 3rem;
+    font-weight: 100;
+    background: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    z-index: 1001;
+  }
+
+  .overlayNav {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .overlayNav li {
+    margin: 1.5rem 0;
+    font-size: clamp(2rem, 5vw, 4rem);
+    font-family: 'PP Editorial Old', serif;
+  }
+
+  .overlayNav a {
+    color: #fff;
+    text-decoration: none;
+    transition: opacity 0.2s;
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+
+  .overlayFooter {
+    position: absolute;
+    bottom: 2rem;
+    font-size: 1rem;
+    a {
+      color: #fff;
+      text-decoration: underline;
+    }
+  }
+}
+.funVersion {
+  font-size: 0.875rem;
+  text-decoration: none;
+  font-family: "Jura", sans-serif;
+  font-weight: 600;
+}
+
+// --- Hero Section ---
+.hero {
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 2rem;
+  font-family: 'PP Editorial Old', serif;
+}
+
+.name {
+  font-size: 9.5vw;
+  line-height: -1px;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: $accent;
+}
+
+.star {
+  font-size: 0.3em;
+}
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+// 기존 .star 클래스 수정 또는 추가
+.star {
+  display: inline-block;           /* transform 적용을 위해 inline 요소를 블록화 */
+  transform-origin: center center; /* 회전 중심을 요소 중앙으로 */
+  animation: spin 5s linear infinite; /* 5초에 한 바퀴, 선형, 무한 반복 */
+}
+
+.dot {
+  width: 0.75rem;
+  height: 0.75rem;
+  background-color: darken($accent, 10%);
+  border-radius: 50%;
+  margin: 2rem 0;
+}
+
+.tagline {
+  position: relative;
+  top: 21rem;  
+  font-size: clamp(1rem, 2.5vw, 2rem);
+  line-height: 1.2;
+  p {
+    margin: 0.25rem 0;
+  }
+
+  .cta {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.75rem 2rem;
+    border: 1px solid $accent;
+    border-radius: 9999px;
+    text-decoration: none;
+    color: $accent;
+    font-weight: 500;
+    &:hover {
+      background-color: rgba($accent, 0.1);
+    }
+  }
+}
+
+// --- Stats (bottom) ---
+.stats {
+  position: fixed;
+  bottom: 2rem;
+  left: 2rem;
+  right: 2rem;
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.875rem;
+  line-height: 1.2;
+  font-family: "Jura", sans-serif;
+  font-weight: 600;
+}
+
+.award {
+  a {
+    color: $accent;
+    font-family: "Jura", sans-serif;
+    font-weight: 600;
+  }
+}
+
+.location { 
+  text-align: right; 
+  font-family: "Jura", sans-serif;
+  font-weight: 600;
+}
