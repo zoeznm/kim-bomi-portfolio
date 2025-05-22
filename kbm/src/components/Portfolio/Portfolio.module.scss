@@ -14,16 +14,18 @@ $accent: #ff4500;
     top: 2rem;           /* 뷰포트 상단에서 2rem 아래 */
     left: 50%;           /* 화면 가로 중앙 */
     transform: translateX(-50%);
-  font-size: clamp(4rem, 10vw, 8rem);
+  font-size: 20vw;
   color: $accent;
   pointer-events: none;
   z-index: 10;
   opacity: 0; /* GSAP의 autoAlpha와 쌍으로 초기 숨김 */
+  font-family: 'PP Editorial Old', serif;
 }
 .box {
   position: absolute;
   /* top, left, width 는 inline style 로 제어 */
   transform: translateY(-50%); /* 박스 중심을 기준으로 */
+  z-index: 20;
 }
 
 .card {
