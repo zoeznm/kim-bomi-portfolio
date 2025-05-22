@@ -1,74 +1,93 @@
-import { useRef, useEffect } from 'react';
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/all';
-import styles from './Portfolio.module.scss';
+// src/components/Portfolio/Portfolio.tsx
 
-gsap.registerPlugin(ScrollTrigger);
+// import React from 'react';
+import styles from "./Portfolio.module.scss";
 
-const BOX_COUNT = 5;
-const rand = (min: number, max: number) =>
-  Math.floor(Math.random() * (max - min + 1)) + min;
+interface Project {
+  year: number;
+  title: string;
+  tags: string[];
+}
 
-export default function ScrollingBoxes() {
-  const containerRef = useRef<HTMLDivElement>(null);
-  const titleRef = useRef<HTMLHeadingElement>(null);
+// 팀 작업 목록
+const teamProjects: Project[] = [
+  { year: 2024, title: "igma.im", tags: ["UI/UX", "Development"] },
+  { year: 2023, title: "Kryptex Pool", tags: ["UI/UX", "Development"] },
+  { year: 2022, title: "Quarks", tags: ["UI/UX", "Motion"] },
+];
 
-   const boxes = Array.from({ length: BOX_COUNT }).map((_, i) => ({
-       left: rand(5, 85),
-       width: rand(200, 350),
-       // base를 80~120vh로 당기고, 간격을 120vh 단위로 줄임
-       top: rand(80, 120) + i * 120 
-     }));
+// 개인 작업 목록
+const personalProjects: Project[] = [
+  { year: 2025, title: "My Portfolio", tags: ["Design", "Development"] },
+  { year: 2024, title: "Landing Page", tags: ["UI/UX", "Animation"] },
+  { year: 2023, title: "Blog Theme", tags: ["CSS", "Responsive"] },
+];
 
-     useEffect(() => {
-      const container = containerRef.current!;
-      const titleEl   = titleRef.current!;
-    
-      // 1) 초기엔 숨김
-      gsap.set(titleEl, { autoAlpha: 0 });
-    
-      ScrollTrigger.create({
-        trigger: container,
-        // 섹션 top이 뷰포트 75% 지점에 닿을 때 발동
-        start: 'top 60%',
-        // 아래로 스크롤해 진입하면 play → 등장
-        onEnter:      () => gsap.to(titleEl, {
-          autoAlpha: 1,
-          duration: 0.6,
-          ease: 'power3.out'
-        }),
-        // 위로 스크롤해 시작점 이전으로 돌아갈 때 reverse → 사라짐
-        onLeaveBack:  () => gsap.to(titleEl, {
-          autoAlpha: 0,
-          duration: 0,
-          ease: 'power3.in'
-        }),
-        // markers: true, // (디버그용)
-      });
-    }, []);
-
+export default function Portfolio() {
   return (
-    <div ref={containerRef} className={styles.container}>
-      <h2 ref={titleRef} className={styles.title}>
-        Portfolio
-      </h2>
-      {boxes.map((box, idx) => (
-        <div
-          key={idx}
-          className={styles.box}
-          style={{
-            left: `${box.left}%`,
-            width: `${box.width}px`,
-            top: `${box.top}vh`
-          }}
-        >
-          <div className={styles.card}>
-            <h3>Project {idx + 1}</h3>
-            <p>UX/UI &amp; Development</p>
-            <a className={styles.link}>{'{ VIEW CASE }'}</a>
+    <>
+      <section id="portfolio" className={styles.portfolioSection}>
+        <div className={styles.marquee}>
+          <div className={styles.marqueeInner}>
+            {/* 두 번 복제 */}
+            <div className={styles.group}>
+              {/* 여기 반복 텍스트로 길게 채우기 */}
+              Portfolio <span className={styles.star}>✹</span>Portfolio{" "}
+              <span className={styles.star}>✹</span>Portfolio{" "}
+              <span className={styles.star}>✹</span>Portfolio{" "}
+              <span className={styles.star}>✹</span>Portfolio{" "}
+              <span className={styles.star}>✹</span> Portfolio
+            </div>
+            <div className={styles.group}>
+              {/* 여기 반복 텍스트로 길게 채우기 */}
+              <span className={styles.star}>✹</span>Portfolio{" "}
+              <span className={styles.star}>✹</span>Portfolio{" "}
+              <span className={styles.star}>✹</span>Portfolio{" "}
+              <span className={styles.star}>✹</span>Portfolio{" "}
+              <span className={styles.star}>✹</span>Portfolio{" "}
+              <span className={styles.star}>✹</span>Portfolio
+            </div>
           </div>
         </div>
-      ))}
-    </div>
+        {/* Personal Works 섹션 */}
+        <section id="personal-works" className={styles.section}>
+          <h2 className={styles.sectionTitle}>= Personal Works</h2>
+          <ul className={styles.list}>
+            {personalProjects.map((proj, i) => (
+              <li key={i} className={styles.item}>
+                <span className={styles.year}>{proj.year}</span>
+                <h3 className={styles.title}>{proj.title}</h3>
+                <div className={styles.tags}>
+                  {proj.tags.map((tag) => (
+                    <span key={tag} className={styles.tag}>
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              </li>
+            ))}
+          </ul>
+        </section>
+        {/* Team Works 섹션 */}
+        <section id="team-works" className={styles.section}>
+          <h2 className={styles.sectionTitle}>= Team Works</h2>
+          <ul className={styles.list}>
+            {teamProjects.map((proj, i) => (
+              <li key={i} className={styles.item}>
+                <span className={styles.year}>{proj.year}</span>
+                <h3 className={styles.title}>{proj.title}</h3>
+                <div className={styles.tags}>
+                  {proj.tags.map((tag) => (
+                    <span key={tag} className={styles.tag}>
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              </li>
+            ))}
+          </ul>
+        </section>
+      </section>
+    </>
   );
 }

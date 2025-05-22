@@ -1,12 +1,18 @@
-// import React from 'react';
-import { useState } from 'react';
+// src/components/MainPage/MainPage.tsx
 
-import styles from './MainPage.module.scss';
-import About from '../About/About';
-import Portfolio from '../Portfolio/Portfolio';
+// import React from 'react';
+import { useState } from "react";
+
+import styles from "./MainPage.module.scss";
+import About from "../About/About";
+import Portfolio from "../Portfolio/Portfolio";
 
 export default function MainPage() {
   const [menuOpen, setMenuOpen] = useState(false);
+
+  // 메뉴 항목별로 이동할 앵커를 매핑
+
+
   return (
     <div className={styles.container}>
       {/* Header */}
@@ -31,12 +37,13 @@ export default function MainPage() {
 
         <div className={styles.navRight}>
           <a href="#fun" className={styles.funVersion}>
-            {'{ KOREAN }'}
+            {"{ KOREAN }"}
           </a>
         </div>
       </header>
-            {/* 풀스크린 메뉴 오버레이 */}
-            {menuOpen && (
+
+      {/* 풀스크린 메뉴 오버레이 */}
+      {menuOpen && (
         <div className={styles.overlay}>
           <button
             className={styles.closeBtn}
@@ -46,14 +53,27 @@ export default function MainPage() {
             &times;
           </button>
           <ul className={styles.overlayNav}>
-                      {['Who I Am', 'Portfolio', 'Contact'].map((item) => (
+            {["Who I Am", "Portfolio", "Contact"].map((item) => (
               <li key={item}>
-     <a
-       href={ item === 'Who I Am' ? '#about' : `#${item.toLowerCase().replace(/\s+/g, '-')}` }
-       onClick={() => setMenuOpen(false)}
-     >
-       {item}
-     </a>
+         <a
+           href="#"
+           onClick={e => {
+             e.preventDefault();
+             // 버튼 닫고
+             setMenuOpen(false);
+             // 해당 섹션으로 스크롤
+             const targetId = item === "Who I Am"
+               ? "about"
+               : item === "Portfolio"
+                 ? "portfolio"
+                 : "contact";
+             document
+               .getElementById(targetId)
+               ?.scrollIntoView({ behavior: "smooth", block: "start" });
+           }}
+         >
+           {item}
+         </a>
               </li>
             ))}
           </ul>
@@ -80,10 +100,13 @@ export default function MainPage() {
             <a href="#awards">awards</a>
           </div>
           <div className={styles.location}>
-            Based in Korea,<br />available worldwide
+            Based in Korea,
+            <br />
+            available worldwide
           </div>
         </div>
       </main>
+
       <About />
       <Portfolio />
     </div>

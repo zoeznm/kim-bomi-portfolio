@@ -1,52 +1,103 @@
-$bg: #fdeee1;
-$accent: #ff4500;
+$accent: #7a53cc;
+$bgHover: rgba($accent, 0.05);
 
-.container {
-  position: relative;
-  width: 100vw;
-  height: 200vh; /* 스크롤 가능한 높이 */
-  background: $bg fixed; /* 배경 고정 */
-  overflow-x: hidden;
+.section {
+  padding: 4rem 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.section + .section {
+  margin-top: -6rem;  /* 바로 뒤따르는 시퀀스 섹션과의 간격 */
+}
+.sectionTitle {
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+  color: #333;
+}
+
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 2px solid $accent;
+  border-radius: 8px;
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 1rem;
+  transition: background 0.3s, transform 0.3s;
+  cursor: pointer;
+
+  &:hover {
+    background: $bgHover;
+    transform: translateY(-4px);
+  }
+}
+
+.year {
+  flex: 0 0 4rem;
+  font-family: 'PP Editorial Old', serif;
+  font-size: 0.9rem;
+  color: $accent;
 }
 
 .title {
-    position: fixed;
-    top: 2rem;           /* 뷰포트 상단에서 2rem 아래 */
-    left: 50%;           /* 화면 가로 중앙 */
-    transform: translateX(-50%);
-  font-size: 20vw;
+  flex: 1;
+  margin: 0 1.5rem;
+  font-size: 1.25rem;
+  color: #222;
+}
+
+.tags {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.tag {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border: 1px solid $accent;
+  border-radius: 9999px;
+  font-size: 0.75rem;
   color: $accent;
-  pointer-events: none;
-  z-index: 10;
-  opacity: 0; /* GSAP의 autoAlpha와 쌍으로 초기 숨김 */
+  transition: background 0.3s, color 0.3s;
+
+  .item:hover & {
+    background: $accent;
+    color: #fff;
+  }
+}
+
+.marquee {
+  position:relative;
+  overflow: hidden;
+  top: 65%;
+  width: 100%;
+}
+
+.marqueeInner {
+  display: flex;
+  width: 200%;                /* 그룹 두 덩어리 합한 너비 */
+  animation: scroll 20s linear infinite;
+}
+
+.group {
+  flex: 0 0 50%;              /* 전체의 절반 */
+  white-space: nowrap;
+  font-size: clamp(3rem,10vw,8rem);
   font-family: 'PP Editorial Old', serif;
-}
-.box {
-  position: absolute;
-  /* top, left, width 는 inline style 로 제어 */
-  transform: translateY(-50%); /* 박스 중심을 기준으로 */
-  z-index: 20;
+  color: #7a53cc;
 }
 
-.card {
-  background: #fff;
-  padding: 1.5rem;
-  border-radius: 12px;
-  box-shadow: 0 6px 16px rgba(0,0,0,0.1);
-  text-align: center;
-
-  h3 {
-    margin: 0 0 0.5rem;
-    color: $accent;
-  }
-  p {
-    margin: 0 1rem 1rem;
-    font-size: 0.9rem;
-    color: #333;
-  }
-  .link {
-    color: $accent;
-    text-decoration: none;
-    font-weight: 500;
-  }
+/* 두 덩어리 중 첫 덩어리가 중앙에서 시작 → -50% 이동 */
+@keyframes scroll {
+  from { transform: translateX(-25%); }
+  to   { transform: translateX(-75%); }
+}
+.portfolioSection {
+  scroll-margin-top: 80px; /* 헤더 높이를 정확히 기입 */
 }
