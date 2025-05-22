@@ -1,18 +1,23 @@
 // src/components/MainPage/MainPage.tsx
 
-// import React from 'react';
-import { useState } from "react";
-
-import styles from "./MainPage.module.scss";
-import About from "../About/About";
-import Portfolio from "../Portfolio/Portfolio";
-import Contact from "../Contact/Contact"
+import { useEffect } from 'react';
+import { Outlet, useLocation } from 'react-router-dom';
+import styles from './MainPage.module.scss';
 
 export default function MainPage() {
-  const [menuOpen, setMenuOpen] = useState(false);
+  const { pathname } = useLocation();
 
-  // 메뉴 항목별로 이동할 앵커를 매핑
+  // 상세 페이지 여부
+  const isDetail =
+    pathname.startsWith('/portfolio/personal/') ||
+    pathname.startsWith('/portfolio/team/');
 
+  // 상세 진입 시 최상단으로 스크롤
+  useEffect(() => {
+    if (isDetail) {
+      window.scrollTo({ top: 0, behavior: 'auto' });
+    }
+  }, [isDetail]);
 
   return (
     <div className={styles.container}>
@@ -23,94 +28,38 @@ export default function MainPage() {
           <span className={styles.separator}>&mdash;</span>
           <span>WEB DEVELOPER</span>
         </nav>
-
-        <div className={styles.navCenter}>
-          <button
-            className={styles.menuBtn}
-            aria-label="Menu"
-            onClick={() => setMenuOpen(true)}
-          >
-            <span />
-            <span />
-            <span />
-          </button>
-        </div>
-
-        <div className={styles.navRight}>
-          <a href="#old" className={styles.funVersion}>
-            {"{ OLD VERSION }"}
-          </a>
-        </div>
       </header>
 
-      {/* 풀스크린 메뉴 오버레이 */}
-      {menuOpen && (
-        <div className={styles.overlay}>
-          <button
-            className={styles.closeBtn}
-            aria-label="Close menu"
-            onClick={() => setMenuOpen(false)}
-          >
-            &times;
-          </button>
-          <ul className={styles.overlayNav}>
-            {["Who I Am", "Portfolio", "Contact"].map((item) => (
-              <li key={item}>
-         <a
-           href="#"
-           onClick={e => {
-             e.preventDefault();
-             // 버튼 닫고
-             setMenuOpen(false);
-             // 해당 섹션으로 스크롤
-             const targetId = item === "Who I Am"
-               ? "about"
-               : item === "Portfolio"
-                 ? "portfolio"
-                 : "contact";
-             document
-               .getElementById(targetId)
-               ?.scrollIntoView({ behavior: "smooth", block: "start" });
-           }}
-         >
-           {item}
-         </a>
-              </li>
-            ))}
-          </ul>
-        </div>
+      {/* Hero 섹션: 상세 페이지일 땐 숨김 */}
+      {!isDetail && (
+        <main className={styles.hero}>
+          <h1 className={styles.name}>
+            Front-end <span className={styles.star}>✹</span> Engineer
+          </h1>
+          <div className={styles.tagline}>
+            <p>I design clean modern</p>
+            <p>websites that embody the</p>
+            <p>essence of your brand</p>
+            <a href="#contact" className={styles.cta}>
+              {'{ SCROLL DOWN }'}
+            </a>
+          </div>
+          <div className={styles.stats}>
+            <div className={styles.award}>
+              Winner of <strong>8</strong> international&nbsp;
+              <a href="#awards">awards</a>
+            </div>
+            <div className={styles.location}>
+              Based in Korea,
+              <br />
+              available worldwide
+            </div>
+          </div>
+        </main>
       )}
 
-      {/* Hero */}
-      <main className={styles.hero}>
-        <h1 className={styles.name}>
-          Front-end <span className={styles.star}>✹</span> Engineer
-        </h1>
-        <div className={styles.tagline}>
-          <p>I design clean modern</p>
-          <p>websites that embody the</p>
-          <p>essence of your brand</p>
-          <a href="#contact" className={styles.cta}>
-            {`{ SCROLL DOWN}`}
-          </a>
-        </div>
-
-        <div className={styles.stats}>
-          <div className={styles.award}>
-            Winner of <strong>8</strong> international&nbsp;
-            <a href="#awards">awards</a>
-          </div>
-          <div className={styles.location}>
-            Based in Korea,
-            <br />
-            available worldwide
-          </div>
-        </div>
-      </main>
-
-      <About />
-      <Portfolio />
-      <Contact />
+      {/* Outlet: index(스크롤 섹션) 또는 상세 컴포넌트 */}
+      <Outlet />
     </div>
   );
 }
