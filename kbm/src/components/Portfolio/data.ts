@@ -23,7 +23,7 @@ export const personalProjects: ProjectDetail[] = [
       '/images/my-wishlist-2.png',
       '/images/my-wishlist-3.png',
     ],
-    reason: '이 프로젝트는 개인이 원하는 물건을 담아두고 관리하기 위해 만들었습니다.',
+    reason: '',
     stack: ['React', 'TypeScript', 'SCSS'],
     features: ['아이템 추가/삭제', '카테고리 분류', '모바일 반응형'],
   },
