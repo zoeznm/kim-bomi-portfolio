@@ -3,27 +3,22 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 
-import MainPage      from './components/MainPage/MainPage';
-import About         from './components/About/About';
-import Portfolio     from './components/Portfolio/Portfolio';
-import Contact       from './components/Contact/Contact';
+import MainPage     from './components/MainPage/MainPage';
+import About        from './components/About/About';
+import Portfolio    from './components/Portfolio/Portfolio';
+import Contact      from './components/Contact/Contact';
 
-import MyWishlist     from './components/Portfolio/personal/MyWishlist';
-import OLDPortfolio   from './components/Portfolio/personal/OLDPortfolio';
-import HSPos          from './components/Portfolio/personal/HSPos';
-import GraduationSHOW from './components/Portfolio/personal/GraduationSHOW';
-import NEWPortfolio   from './components/Portfolio/personal/NEWPortfolio';
-
-import VendingMachine  from './components/Portfolio/team/VendingMachine';
-import DeveloperERP    from './components/Portfolio/team/DeveloperERP';
-import MachineLearning from './components/Portfolio/team/MachineLearning';
+// 개인·팀 상세를 처리할 컴포넌트
+import PersonalDetail from './components/Portfolio/personal/PersonalDetail';
+import TeamDetail     from './components/Portfolio/team/TeamDetail';
 
 export default function App() {
   return (
       <Routes>
-        {/* MainPage 레이아웃 */}
+        {/* 메인 레이아웃: 헤더+히어로 + Outlet */}
         <Route path="/" element={<MainPage />}>
-          {/* 홈 인덱스: 스크롤 섹션들 */}
+          
+          {/* 1) 홈 인덱스에 스크롤 섹션들 (About, Portfolio, Contact) */}
           <Route
             index
             element={
@@ -35,19 +30,19 @@ export default function App() {
             }
           />
 
-          {/* Personal 상세 (slug) */}
-          <Route path="portfolio/personal/my-wishlist"     element={<MyWishlist />} />
-          <Route path="portfolio/personal/old-portfolio"   element={<OLDPortfolio />} />
-          <Route path="portfolio/personal/hs-pos"          element={<HSPos />} />
-          <Route path="portfolio/personal/graduation-show" element={<GraduationSHOW />} />
-          <Route path="portfolio/personal/new-portfolio"   element={<NEWPortfolio />} />
+          {/* 2) 개인 작업 상세: slug 파라미터 하나로 처리 */}
+          <Route
+            path="portfolio/personal/:slug"
+            element={<PersonalDetail />}
+          />
 
-          {/* Team 상세 (slug) */}
-          <Route path="portfolio/team/vending-machine"  element={<VendingMachine />} />
-          <Route path="portfolio/team/developer-erp"    element={<DeveloperERP />} />
-          <Route path="portfolio/team/machine-learning" element={<MachineLearning />} />
+          {/* 3) 팀 작업 상세: slug 파라미터 하나로 처리 */}
+          <Route
+            path="portfolio/team/:slug"
+            element={<TeamDetail />}
+          />
 
-          {/* 404나 기타 경로: 홈으로 리다이렉트 */}
+          {/* 4) 그 외(404)는 홈으로 */}
           <Route
             path="*"
             element={

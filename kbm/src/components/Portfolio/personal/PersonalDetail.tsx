@@ -1,13 +1,13 @@
-// src/components/Portfolio/personal/MyWishlist.tsx
+// src/components/Portfolio/personal/PersonalDetail.tsx
+
 import { useParams, Link } from 'react-router-dom';
 import { personalProjects } from '../data';
 import styles from '../Detail.module.scss';
 
-export default function MyWishlist() {
+export default function PersonalDetail() {
   const { slug } = useParams<{ slug: string }>();
-  console.log('MyWishlist slug =', slug);
   const proj = personalProjects.find(p => p.slug === slug);
-  console.log('MyWishlist proj =', proj);
+
   if (!proj) return <p>Project not found.</p>;
 
   return (
@@ -16,7 +16,12 @@ export default function MyWishlist() {
         ← Back to Portfolio
       </Link>
       <h1>{proj.title}</h1>
-      {/* … */}
+      <p><strong>Year:</strong> {proj.year}</p>
+      <p><strong>Tags:</strong> {proj.tags.join(', ')}</p>
+      <div className={styles.description}>
+        {/* 여기에 {proj.title} 상세 설명을 작성하세요 */}
+        {proj.title} 프로젝트 상세 내용…
+      </div>
     </article>
   );
 }

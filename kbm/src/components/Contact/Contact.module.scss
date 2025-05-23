@@ -1,4 +1,3 @@
-
 /* src/components/ContactSection/ContactSection.module.scss */
 $bg: #fdeee1;
 $accent: #ff4500;
@@ -17,7 +16,7 @@ $text: #333;
 }
 
 .mainHeading {
-  font-family: 'PP Editorial Old', serif;
+  font-family: "PP Editorial Old", serif;
   font-size: 12vw;
   color: #fff;
   background: $accent;
@@ -35,7 +34,7 @@ $text: #333;
 }
 
 .ctaBox {
-  font-family: 'Jura', serif;
+  font-family: "Jura", serif;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -57,23 +56,23 @@ $text: #333;
 }
 
 .sectionTitle {
-  font-family: 'Jura', serif;
+  font-family: "Jura", serif;
   font-size: 1rem;
   color: $accent;
   margin-bottom: 1rem;
 }
 
-.contactMethods{
+.contactMethods {
   text-align: right;
 }
 
-
 .contactMethods ul,
 .otherLinks ul {
-  font-family: 'Jura', serif;
+  font-family: "Jura", serif;
   list-style: none;
   padding: 0;
   margin: 0;
+  margin-right: 10px;
 }
 
 .contactMethods li,
@@ -94,7 +93,7 @@ $text: #333;
 }
 
 .footer {
-  font-family: 'Jura', serif;
+  font-family: "Jura", serif;
   display: flex;
   justify-content: space-between;
   font-size: 0.875rem;
