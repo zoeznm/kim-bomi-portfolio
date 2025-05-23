@@ -1,27 +1,59 @@
 // src/components/Portfolio/personal/PersonalDetail.tsx
 
 import { useParams, Link } from 'react-router-dom';
-import { personalProjects } from '../data';
-import styles from '../Detail.module.scss';
+import { personalProjects, type ProjectDetail } from '../data';  
+import styles from './PersonalDetail.module.scss';
 
 export default function PersonalDetail() {
   const { slug } = useParams<{ slug: string }>();
-  const proj = personalProjects.find(p => p.slug === slug);
+
+  // 데이터 타입 명시
+  const proj: ProjectDetail | undefined = personalProjects.find(
+    (p) => p.slug === slug
+  );
 
   if (!proj) return <p>Project not found.</p>;
 
+  // data.ts에 정의된 images, reason, stack, features 사용
   return (
-    <article className={styles.detail}>
-      <Link to="/portfolio" className={styles.back}>
-        ← Back to Portfolio
-      </Link>
-      <h1>{proj.title}</h1>
-      <p><strong>Year:</strong> {proj.year}</p>
-      <p><strong>Tags:</strong> {proj.tags.join(', ')}</p>
-      <div className={styles.description}>
-        {/* 여기에 {proj.title} 상세 설명을 작성하세요 */}
-        {proj.title} 프로젝트 상세 내용…
-      </div>
-    </article>
+    <div className={styles.detailContainer}>
+      {/* 왼쪽: 스크롤되는 이미지 */}
+      <aside className={styles.images}>
+        {proj.images.map((src, i) => (
+          <img key={i} src={src} alt={`${proj.title} screenshot ${i + 1}`} />
+        ))}
+      </aside>
+
+      {/* 오른쪽: 고정된 정보 3등분 */}
+      <section className={styles.info}>
+        <Link to="/portfolio" className={styles.back}>
+          ← Back to Portfolio
+        </Link>
+        <h1 className={styles.title}>{proj.title}</h1>
+
+        <div className={styles.reason}>
+          <h2>만든 이유</h2>
+          <p>{proj.reason}</p>
+        </div>
+
+        <div className={styles.stack}>
+          <h2>사용한 스택</h2>
+          <ul>
+            {proj.stack.map((item) => (
+              <li key={item}>{item}</li>
+            ))}
+          </ul>
+        </div>
+
+        <div className={styles.features}>
+          <h2>핵심 기능</h2>
+          <ul>
+            {proj.features.map((f) => (
+              <li key={f}>{f}</li>
+            ))}
+          </ul>
+        </div>
+      </section>
+    </div>
   );
 }

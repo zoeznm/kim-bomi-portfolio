@@ -1,48 +1,51 @@
 // src/components/Portfolio/personal/MyWishlist.tsx
 
-
 import { useParams, Link } from 'react-router-dom';
-import { personalProjects } from '../data';
+import { personalProjects, type ProjectDetail } from '../data';
 import styles from './MyWishlist.module.scss';
 
 export default function MyWishlist() {
   const { slug } = useParams<{ slug: string }>();
-  const proj = personalProjects.find(p => p.slug === slug);
-  if (!proj) return <p>Project not found.</p>;
+  // ProjectDetail 타입으로 명시
+  const proj: ProjectDetail | undefined = personalProjects.find(
+    (p) => p.slug === slug
+  );
 
-  // 예시 이미지 리스트 (public/images 아래에 파일이 있어야 합니다)
-  const images = [
-    `/images/${proj.slug}-1.png`,
-    `/images/${proj.slug}-2.png`,
-    `/images/${proj.slug}-3.png`,
-  ];
+  if (!proj) {
+    return <p>Project not found.</p>;
+  }
 
   return (
     <div className={styles.detailContainer}>
-      {/* 왼쪽: 스크롤되는 이미지들 */}
+      {/* 왼쪽: 이미지 스크롤 */}
       <aside className={styles.images}>
-        {images.map((src, i) => (
-          <img key={i} src={src} alt={`${proj.title} screenshot ${i + 1}`} />
+        {proj.images.map((src, i) => (
+          <img
+            key={i}
+            src={src}
+            alt={`${proj.title} screenshot ${i + 1}`}
+          />
         ))}
       </aside>
 
-      {/* 오른쪽: 고정된 정보 영역 */}
+      {/* 오른쪽: 고정된 정보 3등분 */}
       <section className={styles.info}>
         <Link to="/portfolio" className={styles.back}>
           ← Back to Portfolio
         </Link>
+
         <h1 className={styles.title}>{proj.title}</h1>
 
         <div className={styles.reason}>
           <h2>만든 이유</h2>
-          <p>…프로젝트를 만든 이유를 여기에 작성하세요…</p>
+          <p>{proj.reason}</p>
         </div>
 
         <div className={styles.stack}>
           <h2>사용한 스택</h2>
           <ul>
-            {proj.tags.map(tag => (
-              <li key={tag}>{tag}</li>
+            {proj.stack.map((item) => (
+              <li key={item}>{item}</li>
             ))}
           </ul>
         </div>
@@ -50,9 +53,9 @@ export default function MyWishlist() {
         <div className={styles.features}>
           <h2>핵심 기능</h2>
           <ul>
-            <li>핵심 기능 A</li>
-            <li>핵심 기능 B</li>
-            <li>핵심 기능 C</li>
+            {proj.features.map((f) => (
+              <li key={f}>{f}</li>
+            ))}
           </ul>
         </div>
       </section>
