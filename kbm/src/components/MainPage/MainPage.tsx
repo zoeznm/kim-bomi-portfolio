@@ -42,8 +42,8 @@ export default function MainPage() {
         </div>
 
         <div className={styles.navRight}>
-          <a href="#fun" className={styles.funVersion}>
-            {'{ KOREAN }'}
+          <a href="http://kimbomiportfolio.s3-website.ap-northeast-2.amazonaws.com/" className={styles.funVersion}>
+            {'{ OLD_VERSION }'}
           </a>
         </div>
       </header>

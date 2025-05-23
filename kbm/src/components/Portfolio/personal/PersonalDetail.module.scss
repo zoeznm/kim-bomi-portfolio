@@ -28,8 +28,13 @@
   background: #fff;
   display: flex;
   flex-direction: column;
+  
+  .navButtons {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
 
-  .back {
+  .back,.next {
     margin-bottom: 1rem;
     color: #555;
     text-decoration: none;
@@ -70,4 +75,5 @@
       padding-left: 1.25rem;
     }
   }
+}
 }
