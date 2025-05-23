@@ -1,12 +1,13 @@
 // src/App.tsx
 
-import React from 'react';
+// import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 
 import MainPage     from './components/MainPage/MainPage';
 import About        from './components/About/About';
 import Portfolio    from './components/Portfolio/Portfolio';
 import Contact      from './components/Contact/Contact';
+
 
 // 개인·팀 상세를 처리할 컴포넌트
 import PersonalDetail from './components/Portfolio/personal/PersonalDetail';

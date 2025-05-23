@@ -1,0 +1,56 @@
+// src/components/Portfolio/DetailLayout.module.scss
+
+.detailContainer {
+  display: flex;
+  height: 100vh; /* 뷰포트 전체 높이 */
+  width: 100vw;
+  overflow: hidden;
+}
+
+.images {
+  flex: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  
+  img {
+    width: 90%;        /* 원하는 비율로 조절 */
+    margin-bottom: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  }
+}
+
+.info {
+  flex: 1;
+  position: relative;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  
+  .title {
+    margin: 0 0 2rem;
+    font-size: 2rem;
+  }
+
+  /* 세 영역을 3등분 */
+  .reason,
+  .stack,
+  .features {
+    flex: 1;
+    overflow: hidden; /* 내부에서 스크롤 되지 않음 */
+    margin-bottom: 1.5rem;
+
+    h2 {
+      margin-bottom: 0.5rem;
+      font-size: 1.25rem;
+      color: #555;
+    }
+    p, ul {
+      margin: 0;
+      line-height: 1.5;
+    }
+  }
+}

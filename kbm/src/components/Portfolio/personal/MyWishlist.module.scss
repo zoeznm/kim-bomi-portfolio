@@ -1,0 +1,72 @@
+// src/components/Portfolio/personal/MyWishlist.module.scss
+
+.detailContainer {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+.images {
+  flex: 1;
+  overflow-y: auto;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #f5f5f5;
+
+  img {
+    width: 90%;
+    margin-bottom: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  }
+}
+
+.info {
+  flex: 1;
+  position: relative;
+  padding: 2rem;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+
+  .back {
+    text-decoration: none;
+    margin-bottom: 1rem;
+    color: #555;
+  }
+
+  .title {
+    margin: 0 0 2rem;
+    font-size: 2.5rem;
+    color: #333;
+  }
+
+  /* 세 영역을 3등분 */
+  .reason,
+  .stack,
+  .features {
+    flex: 1;
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+
+    h2 {
+      margin-bottom: 0.5rem;
+      font-size: 1.25rem;
+      color: #666;
+    }
+
+    p, ul {
+      margin: 0;
+      line-height: 1.6;
+      color: #444;
+    }
+
+    ul {
+      list-style: disc;
+      padding-left: 1.25rem;
+    }
+  }
+}
