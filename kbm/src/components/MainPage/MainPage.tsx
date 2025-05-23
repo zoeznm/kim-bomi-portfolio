@@ -1,10 +1,11 @@
 // src/components/MainPage/MainPage.tsx
-
+import { useState } from 'react';
 import { useEffect } from 'react';
 import { Outlet, useLocation } from 'react-router-dom';
 import styles from './MainPage.module.scss';
 
 export default function MainPage() {
+  const [menuOpen, setMenuOpen] = useState(false);
   const { pathname } = useLocation();
 
   // 상세 페이지 여부
@@ -24,12 +25,52 @@ export default function MainPage() {
       {/* Header */}
       <header className={styles.header}>
         <nav className={styles.navLeft}>
-          <span>PTFOLIO</span>
+          <span>PORTFOLIO</span>
           <span className={styles.separator}>&mdash;</span>
           <span>WEB DEVELOPER</span>
         </nav>
-      </header>
+        <div className={styles.navCenter}>
+          <button
+            className={styles.menuBtn}
+            aria-label="Menu"
+            onClick={() => setMenuOpen(true)}
+          >
+            <span />
+            <span />
+            <span />
+          </button>
+        </div>
 
+        <div className={styles.navRight}>
+          <a href="#fun" className={styles.funVersion}>
+            {'{ KOREAN }'}
+          </a>
+        </div>
+      </header>
+            {/* 풀스크린 메뉴 오버레이 */}
+            {menuOpen && (
+        <div className={styles.overlay}>
+          <button
+            className={styles.closeBtn}
+            aria-label="Close menu"
+            onClick={() => setMenuOpen(false)}
+          >
+            &times;
+          </button>
+          <ul className={styles.overlayNav}>
+                      {['Who I Am', 'Portfolio', 'Contact'].map((item) => (
+              <li key={item}>
+     <a
+       href={ item === 'Who I Am' ? '#about' : `#${item.toLowerCase().replace(/\s+/g, '-')}` }
+       onClick={() => setMenuOpen(false)}
+     >
+       {item}
+     </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
       {/* Hero 섹션: 상세 페이지일 땐 숨김 */}
       {!isDetail && (
         <main className={styles.hero}>

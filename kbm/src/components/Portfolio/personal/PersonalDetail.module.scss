@@ -1,4 +1,5 @@
 // src/components/Portfolio/personal/PersonalDetail.module.scss
+@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Jura:wght@300..700&display=swap');
 
 .detailContainer {
   display: flex;
@@ -32,12 +33,14 @@
     margin-bottom: 1rem;
     color: #555;
     text-decoration: none;
+    font-family: 'Jura', serif;
   }
 
   .title {
     margin: 0 0 2rem;
     font-size: 2.5rem;
     color: #333;
+    font-family: 'PP Editorial Old', serif;
   }
 
   .reason,
@@ -47,16 +50,19 @@
     overflow: hidden;
     margin-bottom: 1.5rem;
 
+
     h2 {
       margin-bottom: 0.5rem;
       font-size: 1.25rem;
       color: #666;
+      font-family: 'Jura', serif;
     }
 
     p, ul {
       margin: 0;
       line-height: 1.6;
       color: #444;
+      font-family: 'Jura', serif;
     }
 
     ul {
