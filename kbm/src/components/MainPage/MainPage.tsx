@@ -87,8 +87,7 @@ export default function MainPage() {
           </div>
           <div className={styles.stats}>
             <div className={styles.award}>
-              Winner of <strong>8</strong> international&nbsp;
-              <a href="#awards">awards</a>
+              Please <strong>Enjoy</strong> My Site&nbsp;
             </div>
             <div className={styles.location}>
               Based in Korea,

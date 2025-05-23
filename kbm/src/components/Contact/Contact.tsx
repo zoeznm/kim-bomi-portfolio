@@ -13,7 +13,7 @@ export default function Contact() {
             href="mailto:bomikim046@gmail.com"
             className={styles.ctaButton}
           >
-            {`{ BOOK FREE CONSULTATION }`}
+            {`{ TEXT ME HERE }`}
           </a>
         </div>
 
@@ -23,7 +23,7 @@ export default function Contact() {
             <li><a href="mailto:bomikim046@gmail.com">Email</a></li>
             <li>
               <a
-                href="https://t.me/yourtelegram"
+                href="https://www.instagram.com/matomabo?igsh=MWxmMTMzOXZ1YXV5Ng%3D%3D&utm_source=qr"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -38,7 +38,7 @@ export default function Contact() {
           <ul>
             <li>
               <a
-                href="https://www.linkedin.com/in/yourprofile"
+                href="https://github.com/zoeznm"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -47,20 +47,11 @@ export default function Contact() {
             </li>
             <li>
               <a
-                href="https://www.behance.net/yourprofile"
+                href="https://www.notion.so/Bomi-s-Portfolio-1270b479a40080b786e3f0606b8f5118?pvs=4"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 Notion
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://dribbble.com/yourprofile"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Dribbble
               </a>
             </li>
           </ul>
