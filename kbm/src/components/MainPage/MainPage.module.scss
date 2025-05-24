@@ -1,18 +1,23 @@
 // Variables
 @import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Jura:wght@300..700&display=swap');
 
-$bg: #fdeee1;
-$accent: #ff4500;
+$bg: #EFE81A;
+$accent: #000;
 $text: #3a1f0b;
 
+html {
+  background-color: #F5CFDE;
+  text-decoration: none;
+}
 
 .container {
-  background-color: $bg;
+  background-color: #F5CFDE;
   color: $accent;
   min-height: 100vh;
   position: relative;
   overflow: hidden;
   width: 100vw;
+  margin: 0;
 }
 
 // --- Header ---
@@ -72,8 +77,8 @@ $text: #3a1f0b;
 .overlay {
   position: fixed;
   inset: 0;                     // top/right/bottom/left: 0
-  background-color: $accent;   // 강렬한 빨간
-  color: #fff;
+  background-color: #fff;   // 강렬한 빨간
+  color: #000;
   z-index: 1000;
   display: flex;
   flex-direction: column;
@@ -91,7 +96,7 @@ $text: #3a1f0b;
     font-weight: 100;
     background: none;
     border: none;
-    color: #fff;
+    color: #000;
     cursor: pointer;
     z-index: 1001;
   }
@@ -109,7 +114,7 @@ $text: #3a1f0b;
   }
 
   .overlayNav a {
-    color: #fff;
+    color: #000;
     text-decoration: none;
     transition: opacity 0.2s;
     &:hover {
@@ -132,6 +137,7 @@ $text: #3a1f0b;
   text-decoration: none;
   font-family: "Jura", sans-serif;
   font-weight: 600;
+  color: #fff;
 }
 
 // --- Hero Section ---
@@ -173,7 +179,7 @@ $text: #3a1f0b;
 
 .tagline {
   position: relative;
-  top: 21rem;  
+  top: 18rem;  
   font-size: clamp(1rem, 2.5vw, 2rem);
   line-height: 1.2;
   p {

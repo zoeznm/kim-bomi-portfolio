@@ -1,6 +1,10 @@
-$accent: #7a53cc;
-$bgHover: rgba($accent, 0.05);
-
+$bg: #A1C9E9;
+$accent: #F5CFDE;
+$bgHover: rgba(0, 0, 0, 0.5);
+.portfolioSection {
+background-color: #F5CFDE;
+  margin: 0;
+}
 .section {
   padding: 4rem 1rem;
   max-width: 1200px;
@@ -12,7 +16,8 @@ $bgHover: rgba($accent, 0.05);
 .sectionTitle {
   font-size: 1rem;
   margin-bottom: 1.5rem;
-  color: #333;
+  color: #000;
+  font-family: "Jura";
 }
 
 .list {
@@ -21,11 +26,12 @@ $bgHover: rgba($accent, 0.05);
   padding: 0;
 }
 
+
 .item {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border: 2px solid $accent;
+  border: 2px solid #000;
   border-radius: 8px;
   padding: 1.25rem 1.5rem;
   margin-bottom: 1rem;
@@ -42,14 +48,25 @@ $bgHover: rgba($accent, 0.05);
   flex: 0 0 4rem;
   font-family: 'PP Editorial Old', serif;
   font-size: 0.9rem;
-  color: $accent;
+  color: #000;
+  text-decoration: none;
+}
+h3 {
+  text-decoration: none;
+}
+Link {
+  text-decoration: none;
+}
+a {
+  text-decoration: none;
 }
 
 .title {
   flex: 1;
   margin: 0 1.5rem;
   font-size: 1.25rem;
-  color: #222;
+  color: #000;
+  text-decoration: none;
 }
 
 .tags {
@@ -60,15 +77,14 @@ $bgHover: rgba($accent, 0.05);
 .tag {
   display: inline-block;
   padding: 0.25rem 0.75rem;
-  border: 1px solid $accent;
+  border: 1px solid #000;
   border-radius: 9999px;
   font-size: 0.75rem;
-  color: $accent;
+  color: #000;
   transition: background 0.3s, color 0.3s;
 
   .item:hover & {
     background: $accent;
-    color: #fff;
   }
 }
 
@@ -90,7 +106,7 @@ $bgHover: rgba($accent, 0.05);
   white-space: nowrap;
   font-size: clamp(3rem,10vw,8rem);
   font-family: 'PP Editorial Old', serif;
-  color: #7a53cc;
+  color: #000;
 }
 
 /* 두 덩어리 중 첫 덩어리가 중앙에서 시작 → -50% 이동 */
@@ -109,4 +125,44 @@ $bgHover: rgba($accent, 0.05);
 @keyframes spin {
   from { transform: rotate(0deg); }
   to   { transform: rotate(360deg); }
+}
+.cardLink {
+  display: flex;
+  justify-content: space-between; /* 좌우 끝 배치 */
+  align-items: center;           /* 수직 가운데 정렬 */
+  height: 100%;
+  padding: 1rem;
+  text-decoration: none;
+  color: inherit;
+  width: 100%;
+  
+  /* 위아래가 아니라 좌우로 붙게 됩니다 */
+}
+
+.head {
+  display: flex;
+  flex-direction: column; /* 연도 위, 제목 아래 */
+  gap: 0.25rem;
+  font-family: "Jura";
+}
+
+.tags {
+  display: flex;
+  gap: 0.5rem;
+  font-family: "Jura";
+}
+
+.year {
+  font-size: 0.9rem;
+  color: #000;
+  font-family: "Jura";
+}
+
+
+
+.title {
+  font-size: 1.2rem;
+  margin: 0;
+  color: #000;
+  font-family: "Jura";
 }

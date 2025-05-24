@@ -1,63 +1,117 @@
-/* src/components/AboutRedesign/AboutRedesign.module.scss */
-$primary: #7a53cc;
-$bg: #f9f9f9;
-$text: #333;
-
 .aboutSection {
-margin-top: 15rem;
-  padding: 4rem 2rem;
-  text-align: center;
+  padding: 0;
+  margin: 0;
+  width: 100vw;
   height: 100vh;
 }
 
-.heading {
-  font-size: 2.5rem;
-  margin-bottom: 2rem;
-  color: $primary;
+.hero {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem;
+  overflow: hidden;
+  background-color: #f5cfde;
+  font-family: "PP Editorial Old", serif;
+}
+
+.heroImage {
+  position: absolute;
+  left: 50px;
+  width: 500px;
+  height: 80vh;
+  object-fit: cover;
+  opacity: 0; // GSAP 애니메이션 전 초기 값
+}
+
+.heroTitle {
+  position: absolute;
+  top: -100px;
+  right: 50px;
+  font-size: 10vw;
+  line-height: 1.2;
+  color: #000;
+  white-space: pre-wrap;
+  opacity: 0; // GSAP 애니메이션 전 초기 값
 }
 
 .featureTabs {
+  position: absolute;
+  top: 50%;
+  right: 10%;
+  transform: translateX(-50%);
   display: flex;
-  justify-content: center;
   gap: 1rem;
-  margin-bottom: 2rem;
+  opacity: 0;
+  animation: fadeIn 0.5s forwards 0.5s;
+}
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
 }
 
-.tab {
+.tab,
+.tabActive {
   background: none;
-  border: 2px solid $primary;
+  border: 2px solid #333;
   border-radius: 9999px;
   padding: 0.5rem 1.5rem;
   font-size: 1rem;
-  color: $primary;
   cursor: pointer;
   transition: background 0.3s, color 0.3s;
 }
-
-.tabActive,
-.tab:hover {
-  background: $primary;
+.tabActive {
+  background: #333;
   color: #fff;
 }
 
 .featureContent {
-  max-width: 600px;
-  margin: 0 auto;
-  font-size: 1.125rem;
-  color: $text;
-  line-height: 1.6;
+  padding: 2rem;
 }
-.photoBox {
-  margin: 0 auto 2rem;
-  width: 200px;
-  height: 200px;
-  overflow: hidden;
-  border-radius: 50%;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 
-  .photoImg {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+.textContent {
+  position: absolute;
+  top: 51%;
+  right: 6%;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  width: 50vw;
+  height: 30vh;
+  color: #444;
+}
+
+.bubbleContainer {
+  position: absolute;
+  top: 50%;
+  right: 7%;
+  width: 50vw;
+  height: 30vh;
+  background: transparent;
+}
+
+/* 개별 버블 공 */
+.bubble {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: #000; /* 공의 기본 색상 */
+  color: #f5cfde; /* 공 안 텍스트 색상 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  text-align: center;
+  padding: 0.25rem;
+  cursor: grab;
+
+  transition: transform 0.2s;
+
+  &:hover {
+    transform: scale(1.1);
+    cursor: grabbing;
   }
 }

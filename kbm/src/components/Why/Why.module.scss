@@ -1,0 +1,120 @@
+// src/components/Why/Why.module.scss
+$rotationDuration: 20s;
+
+.wrapper {
+  background-color: #F5CFDE;
+  padding: 4rem 2rem;
+  margin-top: 15rem;
+  color: #000; /* 타이틀/텍스트 주황 */
+  .title {
+    margin-top: -3rem;
+    font-size: 8vw;
+    margin-bottom: 2rem;
+    font-family: 'PP Editorial Old', serif;
+    color: #000;
+    text-align: left;
+  }
+}
+
+.list {
+  list-style: none;
+  margin: 0;
+  padding-left: 50%;
+}
+
+.item {
+  border-bottom: 1px solid #000;
+  transition: background 0.3s;
+  width: 100%;
+  margin-bottom: 30px;
+  
+  & + & {
+    margin-top: 1rem;
+  }
+
+  &.open .detail {
+    max-height: 200px;
+    padding: 1rem 2rem;
+  }
+}
+
+.trigger {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  background: transparent;
+  border: none;
+  padding: 1rem 2rem;
+  cursor: pointer;
+  position: relative;
+  transition: background 0.3s;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.2);
+  }
+}
+
+.text {
+  font-size: 1.5rem;
+  sup {
+    font-size: 1rem;
+    color: #000;
+    margin-left: 0.5rem;
+  }
+}
+
+.arrow {
+  width: 1rem;
+  height: 1rem;
+  border-right: 2px solid #000;
+  border-bottom: 2px solid #000;
+  transform: rotate(-45deg);
+  transition: transform 0.3s, color 0.3s;
+}
+
+.trigger:hover .arrow,
+.item.open .arrow {
+  transform: rotate(45deg);
+  border-color: #fff;
+}
+.circleContainer {
+  top: 30%;
+  position: absolute;
+  left: 15%;
+  width: 80%;
+  margin: 0 auto 3rem;
+  /* 중앙을 축으로 계속 회전 */
+  animation: spin 20s linear infinite;
+  transform-origin: center center;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(-360deg); }
+}
+
+.circleChar {
+  position: absolute;
+  top: 50%; left: 50%;
+  /* 첫 회전에서 원주에 위치 → 텍스트는 -angle 로 보정 */
+  transform-origin: 0 0;
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  color: #000;
+  white-space: pre;
+  /* 애니메이션 제거 */
+  animation: none;
+  font-family: "Jura";
+}
+.detail {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, padding 0.4s ease;
+  background: #000;
+  color: #fff;
+  p {
+    margin: 0;
+    line-height: 1.5;
+  }
+}

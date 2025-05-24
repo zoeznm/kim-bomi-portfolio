@@ -79,14 +79,14 @@ export default function MainPage() {
       {!isDetail && (
         <main className={styles.hero}>
           <h1 className={styles.name}>
-            Front-end <span className={styles.star}>✹</span> Engineer
+            Front-end <span className={styles.star}>✦</span> Engineer
           </h1>
           <div className={styles.tagline}>
-            <p>I design clean modern</p>
-            <p>websites that embody the</p>
-            <p>essence of your brand</p>
+            <p>Did you enjoy exploring</p>
+            <p>this website and find it</p>
+            <p>to your liking?</p>
             <a href="#contact" className={styles.cta}>
-              {'{ SCROLL DOWN }'}
+              {'{ MOVE CONTACT }'}
             </a>
           </div>
           <div className={styles.stats}>

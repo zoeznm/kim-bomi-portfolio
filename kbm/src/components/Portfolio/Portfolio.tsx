@@ -11,10 +11,10 @@ export default function Portfolio() {
       <div className={styles.marquee}>
         <div className={styles.marqueeInner}>
           <div className={styles.group}>
-            Portfolio ✹ Portfolio ✹ Portfolio ✹ Portfolio ✹ Portfolio ✹ Portfolio
+            Portfolio <span className={styles.star}>✦</span> Portfolio <span className={styles.star}>✦</span> Portfolio <span className={styles.star}>✦</span> Portfolio <span className={styles.star}>✦</span> Portfolio <span className={styles.star}>✦</span> Portfolio
           </div>
           <div className={styles.group}>
-            ✹ Portfolio ✹ Portfolio ✹ Portfolio ✹ Portfolio ✹ Portfolio ✹ Portfolio
+          <span className={styles.star}>✦</span> Portfolio <span className={styles.star}>✦</span> Portfolio <span className={styles.star}>✦</span> Portfolio <span className={styles.star}>✦</span> Portfolio <span className={styles.star}>✦</span> Portfolio <span className={styles.star}>✦</span> Portfolio
           </div>
         </div>
       </div>
@@ -28,6 +28,7 @@ export default function Portfolio() {
               <span className={styles.year}>2024</span>
               <h3 className={styles.title}>My Wishlist</h3>
               <div className={styles.tags}>
+              <span className={styles.tag}>UI/UX</span>
                 <span className={styles.tag}>Design</span>
                 <span className={styles.tag}>Development</span>
               </div>
@@ -38,6 +39,7 @@ export default function Portfolio() {
               <span className={styles.year}>2024</span>
               <h3 className={styles.title}>OLD_Portfolio</h3>
               <div className={styles.tags}>
+              <span className={styles.tag}>UI/UX</span>
                 <span className={styles.tag}>Design</span>
                 <span className={styles.tag}>Development</span>
               </div>
@@ -48,8 +50,9 @@ export default function Portfolio() {
               <span className={styles.year}>2025</span>
               <h3 className={styles.title}>HS POS</h3>
               <div className={styles.tags}>
-                <span className={styles.tag}>UI/UX</span>
-                <span className={styles.tag}>Animation</span>
+              <span className={styles.tag}>UI/UX</span>
+                <span className={styles.tag}>Design</span>
+                <span className={styles.tag}>Development</span>
               </div>
             </Link>
           </li>
@@ -58,8 +61,9 @@ export default function Portfolio() {
               <span className={styles.year}>2025</span>
               <h3 className={styles.title}>Graduation SHOW</h3>
               <div className={styles.tags}>
-                <span className={styles.tag}>CSS</span>
-                <span className={styles.tag}>Responsive</span>
+              <span className={styles.tag}>UI/UX</span>
+                <span className={styles.tag}>Design</span>
+                <span className={styles.tag}>Development</span>
               </div>
             </Link>
           </li>
@@ -68,8 +72,9 @@ export default function Portfolio() {
               <span className={styles.year}>2025</span>
               <h3 className={styles.title}>NEW_Portfolio</h3>
               <div className={styles.tags}>
-                <span className={styles.tag}>CSS</span>
-                <span className={styles.tag}>Responsive</span>
+              <span className={styles.tag}>UI/UX</span>
+                <span className={styles.tag}>Design</span>
+                <span className={styles.tag}>Development</span>
               </div>
             </Link>
           </li>
@@ -86,6 +91,7 @@ export default function Portfolio() {
               <h3 className={styles.title}>Vending-Machine</h3>
               <div className={styles.tags}>
                 <span className={styles.tag}>UI/UX</span>
+                <span className={styles.tag}>Design</span>
                 <span className={styles.tag}>Development</span>
               </div>
             </Link>
@@ -96,6 +102,7 @@ export default function Portfolio() {
               <h3 className={styles.title}>Developer ERP</h3>
               <div className={styles.tags}>
                 <span className={styles.tag}>UI/UX</span>
+                <span className={styles.tag}>Design</span>
                 <span className={styles.tag}>Development</span>
               </div>
             </Link>
@@ -106,7 +113,8 @@ export default function Portfolio() {
               <h3 className={styles.title}>Machine Learning</h3>
               <div className={styles.tags}>
                 <span className={styles.tag}>UI/UX</span>
-                <span className={styles.tag}>Motion</span>
+                <span className={styles.tag}>Design</span>
+                <span className={styles.tag}>Development</span>
               </div>
             </Link>
           </li>
