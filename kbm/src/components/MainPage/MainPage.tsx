@@ -22,31 +22,35 @@ export default function MainPage() {
 
   return (
     <div className={styles.container}>
-      {/* Header */}
-      <header className={styles.header}>
-        <nav className={styles.navLeft}>
-          <span>PORTFOLIO</span>
-          <span className={styles.separator}>&mdash;</span>
-          <span>WEB DEVELOPER</span>
-        </nav>
-        <div className={styles.navCenter}>
-          <button
-            className={styles.menuBtn}
-            aria-label="Menu"
-            onClick={() => setMenuOpen(true)}
-          >
-            <span />
-            <span />
-            <span />
-          </button>
-        </div>
-
-        <div className={styles.navRight}>
-          <a href="http://kimbomiportfolio.s3-website.ap-northeast-2.amazonaws.com/" className={styles.funVersion}>
-            {'{ OLD_VERSION }'}
-          </a>
-        </div>
-      </header>
+   {/* Header: 상세 페이지일 땐 숨김 */}
+   {!isDetail && (
+        <header className={styles.header}>
+          <nav className={styles.navLeft}>
+            <span>PORTFOLIO</span>
+            <span className={styles.separator}>&mdash;</span>
+            <span>WEB DEVELOPER</span>
+          </nav>
+          <div className={styles.navCenter}>
+            <button
+              className={styles.menuBtn}
+              aria-label="Menu"
+              onClick={() => setMenuOpen(true)}
+            >
+              <span />
+              <span />
+              <span />
+            </button>
+          </div>
+          <div className={styles.navRight}>
+            <a
+              href="http://kimbomiportfolio.s3-website.ap-northeast-2.amazonaws.com/"
+              className={styles.funVersion}
+            >
+              {'{ OLD_VERSION }'}
+            </a>
+          </div>
+        </header>
+      )}
             {/* 풀스크린 메뉴 오버레이 */}
             {menuOpen && (
         <div className={styles.overlay}>

@@ -42,17 +42,17 @@ export default function PersonalDetail() {
 
         {/* ... reason, stack, features 영역 그대로 ... */}
         <div className={styles.reason}>
-          <h2>만든 이유</h2>
+          <h2>Why I Made This</h2>
           <p>{proj.reason}</p>
         </div>
         <div className={styles.stack}>
-          <h2>사용한 스택</h2>
+          <h2>Tech Stack</h2>
           <ul>
             {proj.stack.map(item => <li key={item}>{item}</li>)}
           </ul>
         </div>
         <div className={styles.features}>
-          <h2>핵심 기능</h2>
+          <h2>Core Features</h2>
           <ul>
             {proj.features.map(f => <li key={f}>{f}</li>)}
           </ul>
