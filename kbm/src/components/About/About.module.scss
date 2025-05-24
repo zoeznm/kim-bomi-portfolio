@@ -1,3 +1,4 @@
+
 .aboutSection {
   padding: 0;
   margin: 0;
@@ -62,6 +63,7 @@
   font-size: 1rem;
   cursor: pointer;
   transition: background 0.3s, color 0.3s;
+  font-family: "Jura";
 }
 .tabActive {
   background: #333;
@@ -74,7 +76,7 @@
 
 .textContent {
   position: absolute;
-  top: 51%;
+  top: 52%;
   right: 6%;
   font-size: 1.1rem;
   line-height: 1.6;

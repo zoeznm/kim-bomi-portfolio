@@ -1,6 +1,4 @@
 // src/components/Portfolio/Portfolio.tsx
-
-import React from 'react';
 import { Link } from 'react-router-dom';
 import styles from './Portfolio.module.scss';
 
