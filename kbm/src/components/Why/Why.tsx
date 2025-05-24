@@ -1,6 +1,10 @@
 // src/components/Why/Why.tsx
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import styles from './Why.module.scss';
+
+gsap.registerPlugin(ScrollTrigger);
 
 interface Reason {
   keyword: string;
@@ -17,14 +21,41 @@ const reasons: Reason[] = [
 
 export default function Why() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
-  const toggle = (i: number) => setOpenIndex(openIndex === i ? null : i);
+  const listRef = useRef<HTMLUListElement>(null);
+
+  const toggle = (i: number) =>
+    setOpenIndex(openIndex === i ? null : i);
 
   // 원형 텍스트 세팅
   const circleText = 'Dreaming of being a Frontend Dev!';
   const chars = Array.from(circleText);
-  const radius = 140;
+  const radius = 200;
   const delta = 360 / chars.length;
   const startAngle = -90;
+
+  // 스크롤마다 리스트 항목 등장 애니메이션
+  useEffect(() => {
+    const items = gsap.utils.toArray<HTMLLIElement>(
+      `.${styles.item}`
+    );
+    items.forEach(item => {
+      gsap.from(item, {
+        opacity: 0,
+        y: 50,
+        duration: 0.8,
+        ease: 'power3.out',
+        scrollTrigger: {
+          trigger: item,
+          start: 'top 80%',
+          toggleActions: 'play none none none'
+        }
+      });
+    });
+    // cleanup
+    return () => {
+      ScrollTrigger.getAll().forEach(st => st.kill());
+    };
+  }, []);
 
   return (
     <section className={styles.wrapper} id="why-frontend">
@@ -33,7 +64,10 @@ export default function Why() {
       </h2>
 
       {/* — 원형 텍스트 */}
-      <div className={styles.circleContainer} style={{ width: radius * 2, height: radius * 2 }}>
+      <div
+        className={styles.circleContainer}
+        style={{ width: radius * 2, height: radius * 2 }}
+      >
         {chars.map((ch, i) => {
           const ang = startAngle + i * delta;
           return (
@@ -55,13 +89,19 @@ export default function Why() {
       </div>
 
       {/* — 리스트 */}
-      <ul className={styles.list}>
+      <ul className={styles.list} ref={listRef}>
         {reasons.map((r, idx) => {
           const num = String(idx + 1).padStart(2, '0');
           const isOpen = openIndex === idx;
           return (
-            <li key={r.keyword} className={`${styles.item} ${isOpen ? styles.open : ''}`}>
-              <button className={styles.trigger} onClick={() => toggle(idx)}>
+            <li
+              key={r.keyword}
+              className={`${styles.item} ${isOpen ? styles.open : ''}`}
+            >
+              <button
+                className={styles.trigger}
+                onClick={() => toggle(idx)}
+              >
                 <span className={styles.text}>
                   {r.keyword} <sup>{num}</sup>
                 </span>

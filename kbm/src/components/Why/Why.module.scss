@@ -100,12 +100,13 @@ $rotationDuration: 20s;
   /* 첫 회전에서 원주에 위치 → 텍스트는 -angle 로 보정 */
   transform-origin: 0 0;
   font-family: 'Inter', sans-serif;
-  font-size: 1rem;
+  font-size: 2rem;
   color: #000;
   white-space: pre;
   /* 애니메이션 제거 */
   animation: none;
   font-family: "Jura";
+  font-weight: 600;
 }
 .detail {
   max-height: 0;
