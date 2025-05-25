@@ -101,3 +101,72 @@ $text: #333;
   border-top: 1px solid rgba($accent, 0.2);
   padding-top: 1rem;
 }
+/* --- 기존 내용 생략 --- */
+
+/* --- Responsive for Contact.module.scss --- */
+
+/* 노트북 이하 */
+@media (max-width: 1200px) {
+  .mainHeading {
+    font-size: 10vw;
+    padding: 0.75rem 1.5rem;
+  }
+  .contentGrid {
+    display: flex;
+    flex-direction: row;
+    gap: 13rem;
+    overflow-x: auto;        /* 가로 스크롤 허용 */
+    padding-bottom: 0.5rem;  /* 스크롤바 여유 공간 */
+  }
+}
+
+/* 태블릿 */
+@media (max-width: 768px) {
+  .mainHeading {
+    font-size: 14vw;
+  }
+  .contentGrid {
+    display: flex;
+    flex-direction: row;
+    gap: 13rem;
+    overflow-x: auto;        /* 가로 스크롤 허용 */
+    padding-bottom: 0.5rem;  /* 스크롤바 여유 공간 */
+  }
+  .ctaButton {
+    padding: 0.5rem 1rem;
+  }
+  .sectionTitle {
+    font-size: 0.9rem;
+  }
+}
+
+/* 모바일 */
+@media (max-width: 480px) {
+  .mainHeading {
+    font-size: 16vw;
+    padding: 0.5rem 1rem;
+  }
+  .contentGrid {
+    display: flex;
+    flex-direction: row;
+    gap: 0.75rem;
+    overflow-x: auto;        /* 가로 스크롤 허용 */
+    padding-bottom: 0.5rem;  /* 스크롤바 여유 공간 */
+  }
+  .ctaButton {
+    font-size: 0.9rem;
+    padding: 0.4rem 0.8rem;
+  }
+  .sectionTitle {
+    font-size: 0.8rem;
+  }
+  .contactMethods ul,
+  .otherLinks ul {
+    margin-right: 0;
+  }
+  .footer {
+    flex-direction: column;
+    gap: 0.5rem;
+    text-align: center;
+  }
+}
