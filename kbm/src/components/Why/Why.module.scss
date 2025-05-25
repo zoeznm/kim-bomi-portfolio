@@ -121,3 +121,97 @@ $rotationDuration: 20s;
     line-height: 1.5;
   }
 }
+// --- Responsive Breakpoints for Why.module.scss ---
+
+@media (max-width: 1024px) {
+  .wrapper {
+    padding: 2rem 0.5rem;
+    margin-bottom: 8rem;
+    .title {
+      font-size: 8vw;
+      margin-bottom: 6rem;
+    }
+    .circleContainer {
+      display: none; // 모바일에서는 숨김
+    }
+    .list {
+      padding-left: 0; // 왼쪽 정렬
+      padding-right: 10px;
+    }
+    .trigger {
+display: flex;
+      align-items: flex-start;
+      padding: 0.5rem 1rem;
+    }
+    .text {
+      font-size: 1rem;
+    }
+    .arrow {
+      width: 0.5rem;
+      height: 0.5rem;
+      margin-top: 0.5rem;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .wrapper {
+    padding: 2rem 0.5rem;
+    margin-bottom: 8rem;
+    .title {
+      font-size: 8vw;
+      margin-bottom: 6rem;
+    }
+    .circleContainer {
+      display: none; // 모바일에서는 숨김
+    }
+    .list {
+      padding-left: 0; // 왼쪽 정렬
+      padding-right: 10px;
+    }
+    .trigger {
+display: flex;
+      align-items: flex-start;
+      padding: 0.5rem 1rem;
+    }
+    .text {
+      font-size: 1rem;
+    }
+    .arrow {
+      width: 0.5rem;
+      height: 0.5rem;
+      margin-top: 0.5rem;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .wrapper {
+    padding: 2rem 0.5rem;
+    margin-bottom: 8rem;
+    .title {
+      font-size: 8vw;
+      margin-bottom: 6rem;
+    }
+    .circleContainer {
+      display: none; // 모바일에서는 숨김
+    }
+    .list {
+      padding-left: 0; // 왼쪽 정렬
+      padding-right: 10px;
+    }
+    .trigger {
+display: flex;
+      align-items: flex-start;
+      padding: 0.5rem 1rem;
+    }
+    .text {
+      font-size: 1rem;
+    }
+    .arrow {
+      width: 0.5rem;
+      height: 0.5rem;
+      margin-top: 0.5rem;
+    }
+  }
+}
