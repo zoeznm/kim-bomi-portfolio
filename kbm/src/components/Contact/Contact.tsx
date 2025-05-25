@@ -1,11 +1,41 @@
 // src/components/ContactSection/ContactSection.tsx
-
+import { useEffect, useRef } from 'react';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import styles from './Contact.module.scss';
 
+gsap.registerPlugin(ScrollTrigger);
+
 export default function Contact() {
+  const headingRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (!headingRef.current) return;
+
+    ScrollTrigger.create({
+      trigger: headingRef.current,
+      start: 'top 80%',
+      onEnter: () => {
+        gsap.to(headingRef.current, {
+          scaleX: 1,
+          borderRadius: '12px',      // 원 → 사각 코너
+          duration: 2,
+          ease: 'power2.out',
+        });
+      },
+      once: true,
+    });
+  }, []);
+
   return (
     <section id="contact" className={styles.contactSection}>
-      <div className={styles.mainHeading}>KEEP IN TOUCH</div>
+      {/* preHeading 필요하면 여기에 */}
+      <div
+        ref={headingRef}
+        className={styles.mainHeading}
+      >
+        KEEP IN TOUCH
+      </div>
 
       <div className={styles.contentGrid}>
         <div className={styles.ctaBox}>
@@ -23,7 +53,7 @@ export default function Contact() {
             <li><a href="mailto:bomikim046@gmail.com">Email</a></li>
             <li>
               <a
-                href="https://www.instagram.com/matomabo?igsh=MWxmMTMzOXZ1YXV5Ng%3D%3D&utm_source=qr"
+                href="https://www.instagram.com/matomabo"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -47,7 +77,7 @@ export default function Contact() {
             </li>
             <li>
               <a
-                href="https://www.notion.so/Bomi-s-Portfolio-1270b479a40080b786e3f0606b8f5118?pvs=4"
+                href="https://www.notion.so/Bomi-s-Portfolio-1270b479a40080b786e3f0606b8f5118"
                 target="_blank"
                 rel="noopener noreferrer"
               >

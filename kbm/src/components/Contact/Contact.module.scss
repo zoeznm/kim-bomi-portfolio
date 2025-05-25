@@ -1,4 +1,4 @@
-/* src/components/ContactSection/ContactSection.module.scss */
+/* src/components/ContactSection/Contact.module.scss */
 $bg: #fdeee1;
 $accent: #bfbfbf;
 $text: #333;
@@ -9,21 +9,21 @@ $text: #333;
   text-align: center;
 }
 
-.preHeading {
-  font-size: 1.5rem;
-  color: $accent;
-  margin-bottom: 1rem;
-}
-
 .mainHeading {
-  font-family: "PP Editorial Old", serif;
-  font-size: 12vw;
-  color: #F5CFDE;
-  background: #000;
   display: inline-block;
   padding: 1rem 2rem;
   border-radius: 12px;
   margin-bottom: 2rem;
+
+  font-family: "PP Editorial Old", serif;
+  font-size: 12vw;
+  color: #F5CFDE;
+  background: #000;
+
+  /* 중앙에서 좌우로 펼치기 위해 초기 scaleX(0) */
+  transform: scaleX(0);
+  transform-origin: center;
+  border-radius: 50%;  
 }
 
 .contentGrid {
