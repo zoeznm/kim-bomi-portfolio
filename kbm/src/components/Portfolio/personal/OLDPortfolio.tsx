@@ -1,12 +1,12 @@
 // src/components/Portfolio/personal/OLDPortfolio.tsx
 
 import { useParams, Link } from 'react-router-dom';
-import { personalProjects, type ProjectDetail } from '../data';
+import { personalProjects, type PersonalProject } from '../data';
 import styles from './MyWishlist.module.scss'; // 같은 스타일 사용
 
 export default function OLDPortfolio() {
   const { slug } = useParams<{ slug: string }>();
-  const proj: ProjectDetail | undefined = personalProjects.find(
+  const proj: PersonalProject | undefined = personalProjects.find(
     (p) => p.slug === slug
   );
 

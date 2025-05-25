@@ -1,13 +1,13 @@
 // src/components/Portfolio/personal/MyWishlist.tsx
 
 import { useParams, Link } from 'react-router-dom';
-import { personalProjects, type ProjectDetail } from '../data';
+import { personalProjects, type PersonalProject } from '../data';
 import styles from './MyWishlist.module.scss';
 
 export default function MyWishlist() {
   const { slug } = useParams<{ slug: string }>();
   // ProjectDetail 타입으로 명시
-  const proj: ProjectDetail | undefined = personalProjects.find(
+  const proj:PersonalProject | undefined = personalProjects.find(
     (p) => p.slug === slug
   );
 
