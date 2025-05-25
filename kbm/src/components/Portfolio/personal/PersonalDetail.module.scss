@@ -78,7 +78,7 @@ html {
       font-size: 8vw;
     }
     .old-portfolio {
-      font-size: 7vw;
+      font-size: 6vw;
     }
     .hs-pos {
       font-size: 10vw;
@@ -103,12 +103,20 @@ html {
       padding-bottom: 0.25rem;
       font-family: "Jura";
     }
-    p,
-    ul {
+    p{
       margin: 0;
       line-height: 1.6;
       color: #444;
       font-family: "Jura";
+    }
+    ul {
+      list-style: none;
+      margin: 0;
+      line-height: 1.6;
+      color: #444;
+      font-family: "Jura";
+      column-count: 2;     /* 몇 개 열로 나눌지 */
+      column-gap: 1.5rem; 
     }
   }
   /* 이후 Reason/Stack/Features */

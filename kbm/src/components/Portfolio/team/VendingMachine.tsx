@@ -1,12 +1,12 @@
 // src/components/Portfolio/team/VendingMachine.tsx
 
 import { useParams, Link } from 'react-router-dom';
-import { teamProjects, type ProjectDetail } from '../data';
+import { teamProjects, type TeamProject } from '../data';
 import styles from './TeamDetail.module.scss';
 
 export default function VendingMachine() {
   const { slug } = useParams<{ slug: string }>();
-  const proj: ProjectDetail | undefined = teamProjects.find(
+  const proj: TeamProject | undefined = teamProjects.find(
     (p) => p.slug === slug
   );
 
@@ -28,7 +28,6 @@ export default function VendingMachine() {
 
         <div className={styles.reason}>
           <h2>만든 이유</h2>
-          <p>{proj.reason}</p>
         </div>
 
         <div className={styles.stack}>

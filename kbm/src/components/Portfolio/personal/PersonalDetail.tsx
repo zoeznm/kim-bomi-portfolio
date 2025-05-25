@@ -1,12 +1,12 @@
 // src/components/Portfolio/personal/PersonalDetail.tsx
 import { useParams, Link } from 'react-router-dom';
-import { personalProjects, type ProjectDetail } from '../data';
+import { personalProjects, type PersonalProject } from '../data';
 import styles from './PersonalDetail.module.scss';
 
 export default function PersonalDetail() {
   const { slug } = useParams<{ slug: string }>();
   const projIndex = personalProjects.findIndex(p => p.slug === slug);
-  const proj: ProjectDetail | undefined = personalProjects[projIndex];
+  const proj: PersonalProject| undefined = personalProjects[projIndex];
 
   if (!proj) return <p>Project not found.</p>;
 
