@@ -1,6 +1,9 @@
 // src/components/Portfolio/personal/PersonalDetail.module.scss
 @import url("https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Jura:wght@300..700&display=swap");
 
+html {
+  padding: 0;
+}
 .detailContainer {
   display: flex;
   width: 100vw;
@@ -11,15 +14,13 @@
 .images {
   flex: 1;
   overflow-y: auto;
-  background: #f5f5f5;
+  background: #000;
   padding: 1rem;
 
   img {
     display: block;
     width: 100%;
     margin-bottom: 1rem;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   }
 }
 
@@ -40,7 +41,7 @@
   position: relative;
 
   /* 세로 구분선 */
-  border-left: 2px solid #e0e0e0;
+  border-left: 2px solid #000;
 
   /* 상단 네비(Back + Next) */
   .navButtons {
@@ -52,13 +53,14 @@
     .back,
     .next {
       text-decoration: none;
-      color: #555;
+      color: #F5CFDE;;
+      background-color: #000;
       padding: 0.5rem 1rem;
-      border: 1px solid #ccc;
-      border-radius: 4px;
+      border-radius: 9999px;
       transition: background 0.2s;
       &:hover {
-        background: #f0f0f0;
+        background: #fff;
+        color: #000;
       }
     }
   }
@@ -67,11 +69,21 @@
   .title {
     grid-row: 2 / 3;
     margin: 0 0 1rem;
-    font-size: 2.5rem;
-    color: #333;
-    margin-top: 1rem;
+    font-size: 6vw;
+    color: #000;
+    font-family: 'PP Editorial Old', serif;
   }
-
+    /* slug별 폰트 크기 조정 */
+    .vending-machine {
+      font-size: 5vw;
+    }
+    .developer-erp {
+      font-size: 6vw;
+    }
+    .machine-learning {
+      font-size: 5vw;
+    }
+    
   /* 중단: 만든 이유 / 스택 / 기능 컨테이너 */
   .reason,
   .stack,
@@ -81,15 +93,17 @@
     h2 {
       margin: 0 0 0.5rem;
       font-size: 1.25rem;
-      color: #666;
-      border-bottom: 1px solid #ddd;
+      color: #000;
+      border-bottom: 2px solid #000;
       padding-bottom: 0.25rem;
+      font-family: "Jura";
     }
     p,
     ul {
       margin: 0;
       line-height: 1.6;
       color: #444;
+      font-family: "Jura";
     }
   }
   /* 이후 Reason/Stack/Features */
@@ -104,11 +118,11 @@
     gap: 0.5rem;
     li {
       display: inline-block;
-      background: #e0e0e0;
+      background: #000;
       padding: 0.25rem 0.75rem;
       border-radius: 9999px;
       font-size: 0.9rem;
-      color: #333;
+      color: #F5CFDE;
     }
   }
 

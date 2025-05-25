@@ -14,6 +14,9 @@ export default function TeamDetail() {
   const nextProj = teamProjects[projIndex + 1];
   const nextSlug = nextProj?.slug;
 
+  // 기본 .title에 slug 기반 modifier 클래스 추가
+  const titleClass = `${styles.title} ${styles[proj.slug] || ''}`;
+
   return (
     <div className={styles.detailContainer}>
       <aside className={styles.images}>
@@ -28,16 +31,14 @@ export default function TeamDetail() {
             ← Back to Home
           </Link>
           {nextSlug && (
-            <Link
-              to={`/portfolio/team/${nextSlug}`}
-              className={styles.next}
-            >
+            <Link to={`/portfolio/team/${nextSlug}`} className={styles.next}>
               Next Project →
             </Link>
           )}
         </div>
 
-        <h1 className={styles.title}>{proj.title}</h1>
+        <h1 className={titleClass}>{proj.title}</h1>
+
         <div className={styles.reason}>
           <h2>Why I Made This</h2>
           <p>{proj.reason}</p>
@@ -54,7 +55,6 @@ export default function TeamDetail() {
             {proj.features.map(f => <li key={f}>{f}</li>)}
           </ul>
         </div>
-        {/* ... reason, stack, features ... */}
       </section>
     </div>
   );
