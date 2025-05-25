@@ -140,3 +140,133 @@ html {
   }
 
 }
+/* deploy 버튼 / 상태 영역 */
+.deploy {
+  margin-top: 2rem;
+  p {
+    margin: 0 0 1rem;
+    font-weight: bold;
+    font-family: "Jura";
+  }
+}
+
+.deployButton {
+  font-family: "Jura";
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  border: 2px solid #000;
+  border-radius: 9999px;
+  text-decoration: none;
+  color: #F5CFDE;
+  background-color: #000;
+  transition: background 0.3s;
+  &:hover {
+    background-color: #333;
+  }
+}
+
+.deployPlaceholder {
+  color: #888;
+  font-style: italic;
+  font-family: "Jura";
+}
+/* --- Responsive (PersonalDetail) --- */
+
+/* 데스크탑 → 노트북 */
+@media (max-width: 1024px) {
+  .detailContainer {
+    flex-direction: column;
+    height: auto;
+  }
+  .images {
+    height: 40vh;
+    padding: 0.5rem;
+    img {
+      margin-bottom: 0.5rem;
+    }
+  }
+  .info {
+    padding: 1.5rem;
+    grid-template-rows:
+      auto
+      auto
+      0.8fr
+      0.8fr
+      0.8fr;
+  }
+}
+
+/* 노트북 → 태블릿 */
+@media (max-width: 768px) {
+  .detailContainer {
+    flex-direction: column;
+  }
+  .images {
+    height: 30vh;
+    padding: 0.5rem;
+  }
+  .info {
+    padding: 1rem;
+    grid-template-rows:
+      auto
+      auto
+      1fr
+      1fr
+      1fr;
+    .title {
+      font-size: 8vw;
+    }
+    .reason,
+    .stack,
+    .features {
+      ul {
+        column-count: 1;
+      }
+    }
+  }
+}
+
+/* 태블릿 → 모바일 */
+@media (max-width: 480px) {
+  .detailContainer {
+    flex-direction: column;
+  }
+  .images {
+    height: 25vh;
+    padding: 0.25rem;
+  }
+  .info {
+    padding: 0.75rem;
+    border-left: none;
+    .navButtons {
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .title {
+      font-size: 10vw;
+      margin-bottom: 0.5rem;
+    }
+    .reason,
+    .stack,
+    .features {
+      padding-right: 0;
+      h2 {
+        font-size: 1rem;
+      }
+      ul {
+        column-count: 1;
+        margin: 0;
+      }
+    }
+    .deploy {
+      margin-top: 1rem;
+      p {
+        font-size: 0.9rem;
+      }
+      .deployButton {
+        padding: 0.5rem 1rem;
+        font-size: 0.8rem;
+      }
+    }
+  }
+}

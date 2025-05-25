@@ -6,14 +6,14 @@ import styles from './PersonalDetail.module.scss';
 export default function PersonalDetail() {
   const { slug } = useParams<{ slug: string }>();
   const projIndex = personalProjects.findIndex(p => p.slug === slug);
-  const proj: PersonalProject| undefined = personalProjects[projIndex];
+  const proj: PersonalProject | undefined = personalProjects[projIndex];
 
   if (!proj) return <p>Project not found.</p>;
 
   const nextProj = personalProjects[projIndex + 1];
   const nextSlug = nextProj?.slug;
 
-  // 기본 .title 외에 slug 기반 modifier 클래스를 추가
+  // modifier class
   const titleClass = `${styles.title} ${styles[proj.slug] || ''}`;
 
   return (
@@ -32,6 +32,7 @@ export default function PersonalDetail() {
               Next Project →
             </Link>
           )}
+          
         </div>
 
         <h1 className={titleClass}>{proj.title}</h1>
@@ -40,17 +41,29 @@ export default function PersonalDetail() {
           <h2>Why I Made This</h2>
           <p>{proj.reason}</p>
         </div>
+
         <div className={styles.stack}>
           <h2>Tech Stack</h2>
           <ul>
             {proj.stack.map(item => <li key={item}>{item}</li>)}
           </ul>
         </div>
+
         <div className={styles.features}>
           <h2>Core Features</h2>
           <ul>
             {proj.features.map(f => <li key={f}>{f}</li>)}
           </ul>
+        </div>
+
+        {/* — 여기에 배포 URL 과 진행 상태 표시 */}
+        <div className={styles.deploy}>
+          {proj.deployUrl
+            ? <a href={proj.deployUrl} target="_blank" rel="noopener noreferrer" className={styles.deployButton}>
+                Visit Live Site
+              </a>
+            : <span className={styles.deployPlaceholder}>NO URL</span>
+          }
         </div>
       </section>
     </div>

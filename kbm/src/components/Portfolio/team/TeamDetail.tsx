@@ -1,5 +1,4 @@
 // src/components/Portfolio/team/TeamDetail.tsx
-
 import { useParams, Link } from 'react-router-dom';
 import { teamProjects, type TeamProject } from '../data';
 import styles from './TeamDetail.module.scss';
@@ -31,7 +30,7 @@ const sectionConfigs: Record<string, SectionConfig> = {
 
 export default function TeamDetail() {
   const { slug } = useParams<{ slug: string }>();
-  const projIndex = teamProjects.findIndex((p) => p.slug === slug);
+  const projIndex = teamProjects.findIndex(p => p.slug === slug);
   const proj: TeamProject | undefined = teamProjects[projIndex];
 
   if (!proj) return <p>Project not found.</p>;
@@ -39,11 +38,9 @@ export default function TeamDetail() {
   const nextProj = teamProjects[projIndex + 1];
   const nextSlug = nextProj?.slug;
 
-  // 슬러그별 섹션 타이틀 로드, 기본은 프로젝트 개요/작동 방식/테마 예시
   const { heading1, heading2, heading3 } =
     sectionConfigs[proj.slug] || sectionConfigs['vending-machine'];
 
-  // 타이틀에 slug 기반 modifier 클래스 추가
   const titleClass = `${styles.title} ${styles[proj.slug] || ''}`;
 
   return (
@@ -56,9 +53,7 @@ export default function TeamDetail() {
 
       <section className={styles.info}>
         <div className={styles.navButtons}>
-          <Link to="/portfolio" className={styles.back}>
-            ← Back to Home
-          </Link>
+          <Link to="/portfolio" className={styles.back}>← Back to Home</Link>
           {nextSlug && (
             <Link to={`/portfolio/team/${nextSlug}`} className={styles.next}>
               Next Project →
@@ -69,7 +64,6 @@ export default function TeamDetail() {
         <h1 className={titleClass}>{proj.title}</h1>
 
         <div className={styles.reason}>
-          {/* 슬러그별로 다른 섹션 타이틀 렌더링 */}
           <h3 className={styles.heading}>{heading1}</h3>
           <p>{proj.overview}</p>
 
@@ -87,19 +81,25 @@ export default function TeamDetail() {
         <div className={styles.stack}>
           <h2>Tech Stack</h2>
           <ul>
-            {proj.stack.map((item) => (
-              <li key={item}>{item}</li>
-            ))}
+            {proj.stack.map(item => <li key={item}>{item}</li>)}
           </ul>
         </div>
 
         <div className={styles.features}>
           <h2>Core Features</h2>
           <ul>
-            {proj.features.map((f) => (
-              <li key={f}>{f}</li>
-            ))}
+            {proj.features.map(f => <li key={f}>{f}</li>)}
           </ul>
+        </div>
+
+        {/* — 배포 URL / 진행 상태 */}
+        <div className={styles.deploy}>
+          {proj.deployUrl
+            ? <a href={proj.deployUrl} target="_blank" rel="noopener noreferrer" className={styles.deployButton}>
+                Visit Live Site
+              </a>
+            : <span className={styles.deployPlaceholder}>NO URL</span>
+          }
         </div>
       </section>
     </div>

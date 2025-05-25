@@ -8,6 +8,8 @@ export interface BaseProject {
   images: string[];
   stack: string[];
   features: string[];
+    /** 배포된 사이트 주소 (없으면 빈 문자열) */
+    deployUrl?: string;
 }
 
 export interface PersonalProject extends BaseProject {
@@ -52,6 +54,7 @@ export const personalProjects: PersonalProject[] = [
         import.meta.url
       ).href,
     ],
+    deployUrl: "http://whatiwantwish.s3-website.ap-northeast-2.amazonaws.com",
     reason:
       "“처음에 제작한 개인 작업물로, 원하는 디자인과 애니메이션을 자유롭게 구현할 수 있는 프로젝트를 만들고자 했습니다. 이에 따라 나만의 Wishlist 페이지를 기획하게 되었고, 이 페이지를 통해 다른 사용자에게 직관적이고 재미있게 내용을 전달할 수 있는 경험을 제공하고자 제작하게 되었습니다.”",
     stack: ["HTML", "CSS", "JavaScript"],
@@ -75,6 +78,7 @@ export const personalProjects: PersonalProject[] = [
       new URL("../../assets/images/oldversion/old_3.png", import.meta.url).href,
       new URL("../../assets/images/oldversion/old_4.png", import.meta.url).href,
     ],
+    deployUrl: "http://kimbomiportfolio.s3-website.ap-northeast-2.amazonaws.com/",
     reason:
       "이 페이지는 제 프로젝트를 효과적으로 보여줄 수 있는 공간으로, 방문자들이 쉽게 접근하고 이해할 수 있도록 구성했습니다. 각 작업물은 명확한 설명과 함께 시각적으로 매력적인 형태로 배치하여, 사용자가 흥미를 느낄 수 있도록 하였습니다. 또한, 반응형 디자인을 적용하여 다양한 기기에서 최적의 경험을 제공할 수 있도록 하였으며, 방문자들이 편리하게 탐색할 수 있는 내비게이션을 구현했습니다. 이러한 노력들을 통해 제 작업물의 가치를 더 많은 사람들과 공유하고, 피드백을 받을 수 있는 기회를 마련하고자 했습니다.",
     stack: ["React", "Lottie"],
@@ -117,6 +121,7 @@ export const personalProjects: PersonalProject[] = [
       new URL("../../assets/images/graduation/show_4.png", import.meta.url)
         .href,
     ],
+    deployUrl: "https://pakyeon.vercel.app/",
     reason:
       "친구의 졸업 패션쇼를 위해, 단순한 초대장이 아닌 쇼의 분위기와 작품 세계를 미리 체험할 수 있는 인터랙티브 플랫폼을 만들고자 했습니다. 스크롤 애니메이션 활용해 패션쇼의 감각적인 전개를 웹으로 재현했고, 포스터 갤러리와 상세 페이지를 통해 각 컬렉션의 스토리와 디테일을 생동감 있게 전달합니다. 이 사이트를 통해 지인들에게 특별한 초대 경험을 선사하고, 졸업 작품들이 가진 아름다움을 더욱 극대화하고자 했습니다.",
     stack: ["React", "TypeScript", "Vite"],
@@ -139,6 +144,7 @@ export const personalProjects: PersonalProject[] = [
       new URL("../../assets/images/newversion/new_3.png", import.meta.url).href,
       new URL("../../assets/images/newversion/new_5.png", import.meta.url).href,
     ],
+    deployUrl: "IT IS THIS SITE!",
     reason:
       "단일 스크롤 구조 위에 GSAP와 React를 활용한 다채로운 인터랙티브 애니메이션을 입혀 사용자가 페이지를 탐험하며 자연스럽게 프로젝트와 브랜딩 메시지를 경험하도록 설계했습니다. 이를 통해 기존 포트폴리오의 정적인 소개 방식을 넘어, 몰입감 있는 스토리텔링과 성능 최적화를 동시에 달성하며 저만의 차별화된 웹 경험을 구현하고자 했습니다.",
     stack: ["React", "Next.js", "TypeScript", "SCSS", "GSAP"],
