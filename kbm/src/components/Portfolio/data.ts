@@ -144,7 +144,7 @@ export const personalProjects: PersonalProject[] = [
       new URL("../../assets/images/newversion/new_3.png", import.meta.url).href,
       new URL("../../assets/images/newversion/new_5.png", import.meta.url).href,
     ],
-    deployUrl: "IT IS THIS SITE!",
+    deployUrl: "https://kim-bomi-portfolio-9pnf.vercel.app/",
     reason:
       "단일 스크롤 구조 위에 GSAP와 React를 활용한 다채로운 인터랙티브 애니메이션을 입혀 사용자가 페이지를 탐험하며 자연스럽게 프로젝트와 브랜딩 메시지를 경험하도록 설계했습니다. 이를 통해 기존 포트폴리오의 정적인 소개 방식을 넘어, 몰입감 있는 스토리텔링과 성능 최적화를 동시에 달성하며 저만의 차별화된 웹 경험을 구현하고자 했습니다.",
     stack: ["React", "Next.js", "TypeScript", "SCSS", "GSAP"],
