@@ -1,0 +1,17 @@
+// src/styles/_mixins.scss
+@import './variables';
+
+@mixin respond-to($breakpoint) {
+  @if $breakpoint == mobile {
+    @media (max-width: #{$bp-mobile}) { @content; }
+  }
+  @else if $breakpoint == tablet {
+    @media (max-width: #{$bp-tablet}) { @content; }
+  }
+  @else if $breakpoint == laptop {
+    @media (max-width: #{$bp-laptop}) { @content; }
+  }
+  @else if $breakpoint == desktop {
+    @media (min-width: #{$bp-desktop}) { @content; }
+  }
+}
