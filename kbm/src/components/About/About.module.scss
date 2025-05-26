@@ -61,7 +61,6 @@
   border-radius: 9999px;
   padding: 0.5rem 1.5rem;
   font-size: 1rem;
-  cursor: pointer;
   transition: background 0.3s, color 0.3s;
   font-family: "Jura";
 }
@@ -108,13 +107,11 @@
   font-size: 0.75rem;
   text-align: center;
   padding: 0.25rem;
-  cursor: grab;
 
   transition: transform 0.2s;
 
   &:hover {
     transform: scale(1.1);
-    cursor: grabbing;
   }
 }
 /* --- Responsive for About.module.scss --- */
@@ -209,13 +206,11 @@
     font-size: 0.75rem;
     text-align: center;
     padding: 0.25rem;
-    cursor: grab;
   
     transition: transform 0.2s;
   
     &:hover {
       transform: scale(1.1);
-      cursor: grabbing;
     }
   }
   .bubbleContainer {
@@ -291,13 +286,11 @@
     font-size: 0.75rem;
     text-align: center;
     padding: 0.25rem;
-    cursor: grab;
   
     transition: transform 0.2s;
   
     &:hover {
       transform: scale(1.1);
-      cursor: grabbing;
     }
   }
   .bubbleContainer {
@@ -372,13 +365,11 @@
     font-size: 0.75rem;
     text-align: center;
     padding: 0.25rem;
-    cursor: grab;
   
     transition: transform 0.2s;
   
     &:hover {
       transform: scale(1.1);
-      cursor: grabbing;
     }
   }
   .bubbleContainer {
@@ -456,13 +447,11 @@
     font-size: 0.75rem;
     text-align: center;
     padding: 0.25rem;
-    cursor: grab;
   
     transition: transform 0.2s;
   
     &:hover {
       transform: scale(1.1);
-      cursor: grabbing;
     }
   }
   .bubbleContainer {
@@ -539,13 +528,11 @@
     font-size: 0.75rem;
     text-align: center;
     padding: 0.25rem;
-    cursor: grab;
   
     transition: transform 0.2s;
   
     &:hover {
       transform: scale(1.1);
-      cursor: grabbing;
     }
   }
   .bubbleContainer {
@@ -617,13 +604,11 @@
     font-size: 0.75rem;
     text-align: center;
     padding: 0.25rem;
-    cursor: grab;
   
     transition: transform 0.2s;
   
     &:hover {
       transform: scale(1.1);
-      cursor: grabbing;
     }
   }
   .bubbleContainer {

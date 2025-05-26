@@ -1,5 +1,8 @@
 // src/components/Portfolio/DetailLayout.module.scss
 
+html {
+  cursor: none;
+}
 .detailContainer {
   display: flex;
   height: 100vh; /* 뷰포트 전체 높이 */

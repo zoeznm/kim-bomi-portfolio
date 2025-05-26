@@ -1,0 +1,9 @@
+/* src/components/CustomCursor.module.scss */
+.cursor {
+  position: fixed;
+  pointer-events: none;   /* 클릭 간섭 방지 */
+  transform: translate(-50%, -50%);
+  font-size: 1.5rem;      /* 크기 조절 */
+  color: #000;            /* 원하는 색 */
+  z-index: 9999;
+}

@@ -1,7 +1,9 @@
 html {
   scroll-behavior: smooth;
 }
-
+body {
+  cursor: url("/cursors/cursor.png") 16 16, auto;
+}
 #root {
   max-width: 1280px;
   margin: 0 auto;
