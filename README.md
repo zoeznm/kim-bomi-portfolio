@@ -13,10 +13,7 @@
 
 ## 📺 데모
 
-- **배포 URL**:[ [https://your-domain.com](https://your-domain.com)  ](https://kim-bomi-portfolio.vercel.app/)
-- **스크린샷**  
-  ![홈 화면](screenshots/home.png)  
-  ![프로젝트 상세](screenshots/detail.png)  
+- **배포 URL**:https://kim-bomi-portfolio.vercel.app/
 
 ---
 
@@ -53,9 +50,8 @@
 - **프레임워크**: React 19, React Router Dom  
 - **빌드 툴**: Vite, TypeScript  
 - **스타일링**: SCSS Modules  
-- **애니메이션**: GSAP  
-- **기타**: kokomi.js (애니메이션 트리거)
-
+- **애니메이션**: GSAP
+  
 ---
 
 ## 📦 설치 및 실행
