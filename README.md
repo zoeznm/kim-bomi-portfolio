@@ -58,7 +58,8 @@
 
 ```bash
 # 저장소 클론
-cd REPO
+https://github.com/zoeznm/kim-bomi-portfolio.git
+cd kbm
 
 # 의존성 설치
 npm install
