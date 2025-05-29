@@ -13,7 +13,7 @@
 
 ## 📺 데모
 
-- **배포 URL**: [https://your-domain.com](https://your-domain.com)  
+- **배포 URL**:[ [https://your-domain.com](https://your-domain.com)  ](https://kim-bomi-portfolio.vercel.app/)
 - **스크린샷**  
   ![홈 화면](screenshots/home.png)  
   ![프로젝트 상세](screenshots/detail.png)  
