@@ -77,7 +77,7 @@ export default function Contact() {
             </li>
             <li>
               <a
-                href="https://www.notion.so/Bomi-s-Portfolio-1270b479a40080b786e3f0606b8f5118"
+                href="https://defiant-saffron-661.notion.site/Frontend-Developer-Portfolio-2100b479a400805d81b4f21761d15a9e?source=copy_link"
                 target="_blank"
                 rel="noopener noreferrer"
               >
